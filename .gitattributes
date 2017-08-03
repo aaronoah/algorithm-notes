@@ -1,0 +1,5 @@
+images/*.png binary
+images/*.jpg binary
+images/*.psd binary
+output/*.epub binary
+output/*.pdf binary
