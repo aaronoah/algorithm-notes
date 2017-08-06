@@ -84,8 +84,8 @@ There are many commonly seen order of growth functions describing the computatio
 * **Logarithmic**: number of operations grows slowly with number of inputs; _e.g. &Omicron;(log(n)), &Omega;(log(n)), &Theta;(log(n))_.
 * **Linearithmic** (combo of Linear and Logarithmic): number of operations grows faster than linear but slower than quadratic; _e.g. &Omicron;(n &sdot; log n), &Omega;(n &sdot; log n), &Theta;(n &sdot; log n)_.
 * **Polynomial**: running times in form of n<sup>k</sup> where k is integers.
-  * **Quadratic**: number of operations grows in a power of 2 with the number of inputs; _e.g. &Omicron;(n<sup>2</sup>), &Omega;(n<sup>2</sup>), &Theta;(n<sup>2</sup>)_.
-  * **Cubic**: number of operations grows in a power of 3 with the number of inputs; _e.g. &Omicron;(n<sup>3</sup>), &Omega;(n<sup>3</sup>), &Theta;(n<sup>3</sup>)_.
+    * **Quadratic**: number of operations grows in a power of 2 with the number of inputs; _e.g. &Omicron;(n<sup>2</sup>), &Omega;(n<sup>2</sup>), &Theta;(n<sup>2</sup>)_.
+    * **Cubic**: number of operations grows in a power of 3 with the number of inputs; _e.g. &Omicron;(n<sup>3</sup>), &Omega;(n<sup>3</sup>), &Theta;(n<sup>3</sup>)_.
 * **Exponential**: number of operations grows exponentially with the number of inputs; _e.g. &Omicron;(2<sup>n</sup>), &Omega;(2<sup>n</sup>), &Theta;(2<sup>n</sup>)_.
 
 <figure style="text-align:center">

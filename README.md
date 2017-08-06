@@ -14,6 +14,7 @@ It is especially helpful for students, engineers and scientists to organize algo
 
 In order to collaboratively take advantage of this material, usage in the following forms are welcomed:
 
+- Preview the documentation online, see [outlines](preface.md)
 - Download the [pdf](), [epub]() or [raw html]() versions of the algorithm handbook for self-learning or redistribution under the license constraint.
 - Clone or Fork this repo to build your own flavor of algorithm handbook or to submit Pull Request.
 
