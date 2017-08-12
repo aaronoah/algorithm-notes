@@ -25,7 +25,9 @@ There are many divide-and-conquer paradigms in a vast amount of computation task
 
 ### Merge Sort
 
+As a widely adopted algorithm across various application systems, [Merge Sort](../sorting/merge-sort.md) is simple to evaluate given its identity of a [divide-and-conquer](../overview.md) algorithm.
 
+For many beginners of divide-and-conquer paradigm, [Merge Sort](../sorting/merge-sort.md) is a good start.
 
 ### Counting Inversions
 
@@ -38,5 +40,9 @@ The general idea is to recursively compute the similarities of two arrays from i
 A novel method [Strassen's Algorithm](multiplication.md) magically improves the matrix multiplication by adoption of [DnC][DnC] pattern. It counters the [naive matrix splitting](multiplication.md) method which fails to decrease the running time on average.
 
 ### Quick Sort
+
+Though choosing a _pivot_ in each sub-problem is the major task in [Quick Sort](../sorting/quick-sort.md) algorithm, it utilizes [divide-and-conquer](DnC) in resolving sorting in partitions created in each run.
+
+Its [average-case](../asymptotic-analysis.md) running time &Omicron;(n &sdot; log(n)) maintains the comparison-based sorting lower bound and Quick Sort is a good beginning for [randomization](../randomization/overview.md) techniques.
 
 [DnC]: overview.md
