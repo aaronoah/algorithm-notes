@@ -148,3 +148,7 @@ wherein Pr(&zscr;<sub>i</sub> compares &zscr;<sub>j</sub>) = Pr(&zscr;<sub>i</su
 complexity holds, proof ends.
 
 [quick-sort]: (#quick-sort)
+
+## Additional References
+
+1. Why is quicksort better than other sorting algorithms in practice? https://cs.stackexchange.com/questions/3/why-is-quicksort-better-than-other-sorting-algorithms-in-practice
