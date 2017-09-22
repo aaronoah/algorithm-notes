@@ -26,3 +26,7 @@ HEAP_SORT(A)
 Given a n-size inputs, there is a &Omicron;(n) estimate on [BUILD_MAX_HEAP](../tree/heap.md) operation; And for each input entry, a [MAX_HEAPIFY](../tree/heap.md) is expected to perform and thus costs &Omicron;(n &sdot; log(n)) in total.
 
 Since the [Heap Sort](#heap-sort) is also a [comparison-based sorting](overview.md) that has proven with a lower bound &Omega;(n &sdot; log(n)), the more tighter bound for Heap Sort will be &Theta;(n &sdot; log(n)).
+
+## Additional References
+
+1. Why is Heap Sort used? https://www.quora.com/Why-is-heap-sort-used
