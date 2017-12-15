@@ -54,7 +54,6 @@ Stable sorting algorithm maintains the relative order of elements with same valu
 * [Merge Sort](merge-sort.md) - a typical [DnC][DnC] strategy in sorting tasks.
 * [Quick Sort](quick-sort.md) - a performant algorithm combined with both [DnC][DnC] and [Randomization](../randomization/overview.md)
 * [Non-Comparison Sort](non-comparison-sort.md) - intro to several non-comparison based sorting algorithms
-* [Topological Sort](topological-sort.md) - a [graph](../graph-algorithms/overview.md) topology sorting technique.
 
 [DnC]: ../divide-and-conquer/overview.md
 [insertion-sort]: insertion-sort.md

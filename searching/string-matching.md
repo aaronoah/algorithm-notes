@@ -96,7 +96,9 @@ Since the generation of a trie is one-pass and remain static afterwards, it is w
 
 _Note: it is valid to contract the termination character ($) to the final character node, the version provided here only assists comprehension_.
 
-Roughly, query strings in the [Trie](#tries) cost &Omicron;(P) in time (**LOOKUP time is independent of the number of strings in the trie!**) and &Omicron;(T); Nonetheless, there are slight variations among different data representations, if you are interested, check [here](https://courses.csail.mit.edu/6.851/spring12/lectures/L16.pdf).
+Roughly, query strings in the [Trie](#tries) cost &Omicron;(P) in time (**LOOKUP time is independent of the number of strings in the trie!**) and &Omicron;(T) in space; Nonetheless, there are slight variations among different data representations, if you are interested, check [here](https://courses.csail.mit.edu/6.851/spring12/lectures/L16.pdf).
+
+_Note: if the character set is ASCII based, it is recommended to use static data structures such as array (e.g. array[1..128]) to store children of a node instead of a dynamic structure like list (which costs linear time than constant to search for the prefixes and the cost of querying strings exceeds &Omicron;(P))_.
 
 * Applications
 
