@@ -1,0 +1,930 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Quick Sort · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../graph-algorithms/overview.html" />
+    
+    
+    <link rel="prev" href="heap-sort.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Preface
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Outline</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../asymptotic-analysis.html">
+            
+                <a href="../asymptotic-analysis.html">
+            
+                    
+                    Asymptotic-Analysis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../divide-and-conquer/overview.html">
+            
+                <a href="../divide-and-conquer/overview.html">
+            
+                    
+                    Divide-and-Conquer (DnC)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../divide-and-conquer/overview.html">
+            
+                <a href="../divide-and-conquer/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../divide-and-conquer/multiplication.html">
+            
+                <a href="../divide-and-conquer/multiplication.html">
+            
+                    
+                    Multiplication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../divide-and-conquer/dnc-strategy.html">
+            
+                <a href="../divide-and-conquer/dnc-strategy.html">
+            
+                    
+                    DnC Strategy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../divide-and-conquer/master-method.html">
+            
+                <a href="../divide-and-conquer/master-method.html">
+            
+                    
+                    Master Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../randomization/overview.html">
+            
+                <a href="../randomization/overview.html">
+            
+                    
+                    Randomization
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../randomization/overview.html">
+            
+                <a href="../randomization/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../randomization/discrete-probability.html">
+            
+                <a href="../randomization/discrete-probability.html">
+            
+                    
+                    Discrete Probability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../randomization/randomized-algorithms.html">
+            
+                <a href="../randomization/randomized-algorithms.html">
+            
+                    
+                    Randomized Algorithms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    Sorting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="selection-sort.html">
+            
+                <a href="selection-sort.html">
+            
+                    
+                    Selection Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="bubble-sort.html">
+            
+                <a href="bubble-sort.html">
+            
+                    
+                    Bubble Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="insertion-sort.html">
+            
+                <a href="insertion-sort.html">
+            
+                    
+                    Insertion Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="shell-sort.html">
+            
+                <a href="shell-sort.html">
+            
+                    
+                    Shell Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" data-path="merge-sort.html">
+            
+                <a href="merge-sort.html">
+            
+                    
+                    Merge Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.7" data-path="heap-sort.html">
+            
+                <a href="heap-sort.html">
+            
+                    
+                    Heap Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.4.8" data-path="quick-sort.html">
+            
+                <a href="quick-sort.html">
+            
+                    
+                    Quick Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../graph-algorithms/overview.html">
+            
+                <a href="../graph-algorithms/overview.html">
+            
+                    
+                    Graph Algorithms
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../graph-algorithms/overview.html">
+            
+                <a href="../graph-algorithms/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../graph-algorithms/minimum-spanning-tree.html">
+            
+                <a href="../graph-algorithms/minimum-spanning-tree.html">
+            
+                    
+                    Minimum Spanning Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../graph-algorithms/shortest-path.html">
+            
+                <a href="../graph-algorithms/shortest-path.html">
+            
+                    
+                    Shortest Path
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../tree/overview.html">
+            
+                <a href="../tree/overview.html">
+            
+                    
+                    Tree
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../tree/overview.html">
+            
+                <a href="../tree/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" >
+            
+                <span>
+            
+                    
+                    Balanced Search Tree
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.2.1" data-path="../tree/avl-tree.html">
+            
+                <a href="../tree/avl-tree.html">
+            
+                    
+                    AVL Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.2" data-path="../tree/red-black-tree.html">
+            
+                <a href="../tree/red-black-tree.html">
+            
+                    
+                    Red-Black Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.3" data-path="../tree/b-tree.html">
+            
+                <a href="../tree/b-tree.html">
+            
+                    
+                    B Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../tree/heap.html">
+            
+                <a href="../tree/heap.html">
+            
+                    
+                    Heap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../searching/overview.html">
+            
+                <a href="../searching/overview.html">
+            
+                    
+                    Searching
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../searching/overview.html">
+            
+                <a href="../searching/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../searching/binary-search.html">
+            
+                <a href="../searching/binary-search.html">
+            
+                    
+                    Binary Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../searching/graph-search.html">
+            
+                <a href="../searching/graph-search.html">
+            
+                    
+                    Graph Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../searching/hash-table.html">
+            
+                <a href="../searching/hash-table.html">
+            
+                    
+                    Hash Table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../searching/string-matching.html">
+            
+                <a href="../searching/string-matching.html">
+            
+                    
+                    String Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../dynamic-programming/overview.html">
+            
+                <a href="../dynamic-programming/overview.html">
+            
+                    
+                    Dynamic Programming
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../dynamic-programming/overview.html">
+            
+                <a href="../dynamic-programming/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../greedy-algorithms/overview.html">
+            
+                <a href="../greedy-algorithms/overview.html">
+            
+                    
+                    Greedy Algorithms
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="../greedy-algorithms/overview.html">
+            
+                <a href="../greedy-algorithms/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Quick Sort</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="quick-sort">Quick Sort</h1>
+<p>Developed by <a href="https://en.wikipedia.org/wiki/Tony_Hoare" target="_blank">Tony Hoare</a> early in 1950s, Quick Sort follows the <a href="../divide-and-conquer/overview.html">DnC</a> pattern but without the COMBINE phase in common DnC paradigm.</p>
+<p><em>An animated example:</em> <strong><a href="https://en.wikipedia.org/wiki/Quicksort#/media/File:Sorting_quicksort_anim.gif" target="_blank">Quick Sort Animation</a></strong></p>
+<h2 id="fundamental-ideas">Fundamental Ideas</h2>
+<p>Given an input array of length n, choose a <strong>pivot</strong> in the array and <em>partition</em> around it in order that the left half of array has elements less than the value of the <strong>pivot</strong> while the right half of array has elements larger than the value of the <strong>pivot</strong>. It applies to all recursive calls with all sub-arrays until the base case in order that all elements are sorted in place.</p>
+<p>Unlike the <a href="merge-sort.html">Merge Sort</a>, <a href="#quick-sort">Quick Sort</a> is implemented in a style of <a href="overview.html"><em>sort-in-place</em></a> with little extra memory usage. <a href="#quick-sort">Quick Sort</a> is prevalent in many practical applications and its <a href="../asymptotic-analysis.html">average-case</a> running time &#x39F;(n &#x22C5; log n) equates many of existing performant comparison-based implementations like <a href="merge-sort.html">MergeSort</a>.</p>
+<p>Different partition methods incur distinct expected running time in total. It is widely adopted to use <a href="#randomization-partition.md">randomized partition</a> but the naive partition methods are still worth to study.</p>
+<h2 id="pseudocode">Pseudocode</h2>
+<pre><code>QUICK_SORT(A, low, high)
+  if low &lt; high
+    p := PARTITION(A, low, high)
+    QUICK_SORT(A, low, p - 1)
+    QUICK_SORT(A, p + 1, high)
+</code></pre><p><em>Note: partition methods might vary in accordance with different inputs. Of many schemes, the <a href="#median-of-three-partition">media-of-three</a> is most recommended choice in practical use.</em></p>
+<h2 id="partition-schemes">Partition Schemes</h2>
+<h3 id="lomuto-partition">Lomuto Partition</h3>
+<p>Lomuto Partition scheme chooses the last element from the array as the pivot as the recursion goes on. It is considered an introductory scheme for <a href="#quick-sort">QuickSort</a> yet less efficient than <a href="#hoare-partition">Hoare Partition</a> scheme.</p>
+<pre>
+<code>
+LOMUTO_PARTITION(A, low, high)
+  pivot := A[high]
+  i := low - 1
+  for j := low to high
+    if A[j] &#x2A7D; pivot
+      i := i + 1
+      if i &#x2260; j
+        swap A[i] with A[j]
+  return i
+</code>
+</pre>
+
+<h3 id="hoare-partition">Hoare Partition</h3>
+<p>In the paper of <a href="https://academic.oup.com/comjnl/article-lookup/doi/10.1093/comjnl/5.1.10" target="_blank">Quicksort</a> written by Hoare, an original partition method is adopted.</p>
+<p>The fundamental idea is to always partition around the first element in the array. Two indices are used in both ends of the sub-arrays and progress towards each other to the middle until an inversion of a pair is found.</p>
+<pre>
+<code>
+HOARE_PARTITION(A, low, high)
+  pivot := A[low]
+  i := low - 1
+  j := high + 1
+  loop
+    do
+      i := i + 1
+    while A[i] &lt; pivot
+
+    do
+      j := j - 1
+    while A[j] &gt; pivot
+
+    if i &#x2A7E; j
+      return j
+
+    swap A[i] with A[j]
+</code>
+</pre>
+
+<p>A modest comparison of <a href="https://cs.stackexchange.com/questions/11458/quicksort-partitioning-hoare-vs-lomuto" target="_blank">Hoare&apos;s and Lomuto&apos;s partition scheme</a> shows that Hoare partition runs three times smaller of swaps on average than Lomuto&apos;s.</p>
+<h3 id="median-of-three-mo3-partition">Median-of-three (Mo3) Partition</h3>
+<p>Promoted by <a href="https://en.wikipedia.org/wiki/Robert_Sedgewick_(computer_scientist" target="_blank">Robert Sedgewick</a>), the &quot;median-of-three&quot; scheme describes itself as choosing the median value among the first, last and middle elements of the array as the pivot.</p>
+<p>It overcomes the problem of sorting almost sorted or reversely sorted arrays with a <a href="../asymptotic-analysis.html">worst-case</a> &#x39F;(n<sup>2</sup>) by offering a relative &quot;median&quot; choice of an optimal <em>pivot</em>.</p>
+<h3 id="randomized-partition">Randomized Partition</h3>
+<p><a href="#quick-sort">Quick Sort</a> with a randomized partition is termed as the randomized QuickSort. It achieves an expected running time with an estimate of &#x39F;(n &#x22C5; log n).</p>
+<p>In the section of <a href="../randomization/randomized-algorithms.html"><strong>randomized algorithms</strong></a>, an algorithm of randomized selection is introduced and its principle is chosen as the foundation to build the pivot selection subroutine of randomized QuickSort.</p>
+<h2 id="issues">Issues</h2>
+<p>Quick sort is sometimes effortless in sorting task; given an almost sorted array, it is a waste of code execution for too many comparisons and not to mention that <em>pivot</em> choosing takes time. And <a href="insertion-sort.html">Insertion Sort</a> is better in dealing with nearly sorted list.</p>
+<p>Still, the quick sort scheme might inadvertently choose the least or most value of the sub-array in every recursion, resulting in a <a href="../asymptotic-analysis.html">worst-case</a> &#x39F;(n<sup>2</sup>) comparisons. In other cases quick sort might be expecting to have efficiency of &#x39F;(n &#x22C5; log n) given the medians of every sub-arrays are chosen in each iteration.</p>
+<p>If there are duplicate elements in the array, or say elements with same value, standard quick sort routines won&apos;t work as brilliant as we expect. In a typical <a href="https://en.wikipedia.org/wiki/Dutch_national_flag_problem" target="_blank">Dutch National Flag problem</a>, a three-way partitioning routine is adopted to split the values into three groups: color of balls is red, color of balls is white and color of balls is black; Then, an improved <a href="#quick-sort">QuickSort</a> should look like:</p>
+<pre>
+<code>
+QUICK_SORT(A, low, high)
+  if low &lt; high
+    p := choose_pivot(A, low, high)
+    left, right := partition(A, p, low, high)  // two return values
+    QUICK_SORT(A, low, left - 1)
+    QUICK_SORT(A, right + 1, high)
+</code>
+</pre>
+
+<h2 id="algorithm-analysis">Algorithm Analysis</h2>
+<p>If every time the least or most value of sub-arrays been chosen as _pivot_s, the resulting complexity would be &#x39F;(n<sup>2</sup>).</p>
+<p>If every time the median value of the sub-array been chosen as <em>pivot</em> (<strong>best pivot</strong>), the resulting complexity would be &#x39F;(n &#x22C5; log n). It still holds even if the <em>pivot</em> got chosen randomly in each run, what to be noted is there is no assumptions on data sets.</p>
+<p><em><strong>Proof</strong></em>:</p>
+<p><em>Note: the <a href="../divide-and-conquer/master-method.html">master method</a> is not applicable here given that the subproblems are unbalanced and unpredictable</em>.</p>
+<ol>
+<li>Define entry variable &#x1D4CF;<sub>i</sub> as the i<sup>th</sup> smallest element in the inputs.</li>
+<li>Create an <a href="">indicator random variable</a> <em>X</em><sub>ij</sub> = I{ &#x1D4CF;<sub>i</sub> compares &#x1D4CF;<sub>j</sub> }.</li>
+<li>Then, the total number of entry comparisons:</li>
+</ol>
+<figure style="text-align:center">
+  <img src="../images/quick_sort_proof_1.jpg">
+</figure>
+
+<ol>
+<li>Apply <a href="">linearity of expectation</a>,</li>
+</ol>
+<figure style="text-align:center">
+  <img width="45%" src="../images/quick_sort_proof_2.png">
+</figure>
+
+<figure style="text-align:center">
+  <img width="100%" src="../images/quick_sort_proof_3.png">
+</figure>
+
+<p>wherein Pr(&#x1D4CF;<sub>i</sub> compares &#x1D4CF;<sub>j</sub>) = Pr(&#x1D4CF;<sub>i</sub> is chosen as the pivot) + Pr(&#x1D4CF;<sub>j</sub> is chosen as the pivot) = 1 / (j-i+1) + 1 / (j-i+1) = 2 / (j-i+1)</p>
+<ol>
+<li>Summing up terms separately, the <a href="../asymptotic-analysis.html">asymptotic approximation</a> is obtained,</li>
+</ol>
+<figure style="text-align:center">
+  <img src="../images/quick_sort_proof_4.jpg">
+</figure>
+
+<figure style="text-align:center">
+  <img src="../images/quick_sort_proof_5.png">
+</figure>
+
+<p>complexity holds, proof ends.</p>
+<h2 id="additional-references">Additional References</h2>
+<ol>
+<li>Why is quicksort better than other sorting algorithms in practice? <a href="https://cs.stackexchange.com/questions/3/why-is-quicksort-better-than-other-sorting-algorithms-in-practice" target="_blank">https://cs.stackexchange.com/questions/3/why-is-quicksort-better-than-other-sorting-algorithms-in-practice</a></li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="heap-sort.html" class="navigation navigation-prev " aria-label="Previous page: Heap Sort">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../graph-algorithms/overview.html" class="navigation navigation-next " aria-label="Next page: Graph Algorithms">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Quick Sort","level":"2.4.8","depth":2,"next":{"title":"Graph Algorithms","level":"2.5","depth":1,"path":"graph-algorithms/overview.md","ref":"graph-algorithms/overview.md","articles":[{"title":"Overview","level":"2.5.1","depth":2,"path":"graph-algorithms/overview.md","ref":"graph-algorithms/overview.md","articles":[]},{"title":"Minimum Spanning Tree","level":"2.5.2","depth":2,"path":"graph-algorithms/minimum-spanning-tree.md","ref":"graph-algorithms/minimum-spanning-tree.md","articles":[]},{"title":"Shortest Path","level":"2.5.3","depth":2,"path":"graph-algorithms/shortest-path.md","ref":"graph-algorithms/shortest-path.md","articles":[]}]},"previous":{"title":"Heap Sort","level":"2.4.7","depth":2,"path":"sorting/heap-sort.md","ref":"sorting/heap-sort.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sorting/quick-sort.md","mtime":"2018-01-31T22:46:45.349Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-31T23:48:42.198Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

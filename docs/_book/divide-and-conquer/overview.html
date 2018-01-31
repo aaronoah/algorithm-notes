@@ -1,0 +1,830 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Divide-and-Conquer (DnC) · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="overview.html" />
+    
+    
+    <link rel="prev" href="../asymptotic-analysis.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Preface
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Outline</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../asymptotic-analysis.html">
+            
+                <a href="../asymptotic-analysis.html">
+            
+                    
+                    Asymptotic-Analysis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    Divide-and-Conquer (DnC)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.2.1" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="multiplication.html">
+            
+                <a href="multiplication.html">
+            
+                    
+                    Multiplication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="dnc-strategy.html">
+            
+                <a href="dnc-strategy.html">
+            
+                    
+                    DnC Strategy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="master-method.html">
+            
+                <a href="master-method.html">
+            
+                    
+                    Master Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../randomization/overview.html">
+            
+                <a href="../randomization/overview.html">
+            
+                    
+                    Randomization
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../randomization/overview.html">
+            
+                <a href="../randomization/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../randomization/discrete-probability.html">
+            
+                <a href="../randomization/discrete-probability.html">
+            
+                    
+                    Discrete Probability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../randomization/randomized-algorithms.html">
+            
+                <a href="../randomization/randomized-algorithms.html">
+            
+                    
+                    Randomized Algorithms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../sorting/overview.html">
+            
+                <a href="../sorting/overview.html">
+            
+                    
+                    Sorting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../sorting/overview.html">
+            
+                <a href="../sorting/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../sorting/selection-sort.html">
+            
+                <a href="../sorting/selection-sort.html">
+            
+                    
+                    Selection Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../sorting/bubble-sort.html">
+            
+                <a href="../sorting/bubble-sort.html">
+            
+                    
+                    Bubble Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../sorting/insertion-sort.html">
+            
+                <a href="../sorting/insertion-sort.html">
+            
+                    
+                    Insertion Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="../sorting/shell-sort.html">
+            
+                <a href="../sorting/shell-sort.html">
+            
+                    
+                    Shell Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" data-path="../sorting/merge-sort.html">
+            
+                <a href="../sorting/merge-sort.html">
+            
+                    
+                    Merge Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.7" data-path="../sorting/heap-sort.html">
+            
+                <a href="../sorting/heap-sort.html">
+            
+                    
+                    Heap Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.8" data-path="../sorting/quick-sort.html">
+            
+                <a href="../sorting/quick-sort.html">
+            
+                    
+                    Quick Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../graph-algorithms/overview.html">
+            
+                <a href="../graph-algorithms/overview.html">
+            
+                    
+                    Graph Algorithms
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../graph-algorithms/overview.html">
+            
+                <a href="../graph-algorithms/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../graph-algorithms/minimum-spanning-tree.html">
+            
+                <a href="../graph-algorithms/minimum-spanning-tree.html">
+            
+                    
+                    Minimum Spanning Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../graph-algorithms/shortest-path.html">
+            
+                <a href="../graph-algorithms/shortest-path.html">
+            
+                    
+                    Shortest Path
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../tree/overview.html">
+            
+                <a href="../tree/overview.html">
+            
+                    
+                    Tree
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../tree/overview.html">
+            
+                <a href="../tree/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" >
+            
+                <span>
+            
+                    
+                    Balanced Search Tree
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.2.1" data-path="../tree/avl-tree.html">
+            
+                <a href="../tree/avl-tree.html">
+            
+                    
+                    AVL Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.2" data-path="../tree/red-black-tree.html">
+            
+                <a href="../tree/red-black-tree.html">
+            
+                    
+                    Red-Black Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.3" data-path="../tree/b-tree.html">
+            
+                <a href="../tree/b-tree.html">
+            
+                    
+                    B Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../tree/heap.html">
+            
+                <a href="../tree/heap.html">
+            
+                    
+                    Heap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../searching/overview.html">
+            
+                <a href="../searching/overview.html">
+            
+                    
+                    Searching
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../searching/overview.html">
+            
+                <a href="../searching/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../searching/binary-search.html">
+            
+                <a href="../searching/binary-search.html">
+            
+                    
+                    Binary Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../searching/graph-search.html">
+            
+                <a href="../searching/graph-search.html">
+            
+                    
+                    Graph Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../searching/hash-table.html">
+            
+                <a href="../searching/hash-table.html">
+            
+                    
+                    Hash Table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../searching/string-matching.html">
+            
+                <a href="../searching/string-matching.html">
+            
+                    
+                    String Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../dynamic-programming/overview.html">
+            
+                <a href="../dynamic-programming/overview.html">
+            
+                    
+                    Dynamic Programming
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../dynamic-programming/overview.html">
+            
+                <a href="../dynamic-programming/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../greedy-algorithms/overview.html">
+            
+                <a href="../greedy-algorithms/overview.html">
+            
+                    
+                    Greedy Algorithms
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="../greedy-algorithms/overview.html">
+            
+                <a href="../greedy-algorithms/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Divide-and-Conquer (DnC)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="divide-and-conquer-dnc-overview">Divide-and-Conquer (DnC) Overview</h1>
+<p>Recursively, many algorithms try to call themselves multiple times for solving tightly relevant sub-problems.</p>
+<p>The DnC paradigm takes the following steps:</p>
+<ol>
+<li>DIVIDE original problem into sub-problems</li>
+<li>CONQUER each sub-problem recursively</li>
+<li><p>(*) COMBINE solutions for sub-problem into one for the original problem</p>
+<p> <em><strong>Note</strong>: some problems don&apos;t have combination phase; for instance, BinarySearch will search for specified element in either the left (n /2) or the right (n /2) of an array and return that element if found.</em></p>
+</li>
+</ol>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="multiplication.html">Multiplication</a> - chapter about integer multiplication, matrix multiplication and polynomial multiplication.</li>
+<li><a href="master-method.html">Master Method</a> - a generalized form of mathematical interpretation is given for DnC problems.</li>
+<li><a href="dnc-strategy.html">DnC Strategy</a> - several different strategies for various problems will be covered.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../asymptotic-analysis.html" class="navigation navigation-prev " aria-label="Previous page: Asymptotic-Analysis">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="overview.html" class="navigation navigation-next " aria-label="Next page: Overview">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Divide-and-Conquer (DnC)","level":"2.2","depth":1,"next":{"title":"Overview","level":"2.2.1","depth":2,"path":"divide-and-conquer/overview.md","ref":"divide-and-conquer/overview.md","articles":[]},"previous":{"title":"Asymptotic-Analysis","level":"2.1","depth":1,"path":"asymptotic-analysis.md","ref":"asymptotic-analysis.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"divide-and-conquer/overview.md","mtime":"2017-06-27T05:59:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-31T23:46:50.251Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

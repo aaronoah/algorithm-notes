@@ -1,0 +1,866 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Graph Algorithms · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="overview.html" />
+    
+    
+    <link rel="prev" href="../sorting/quick-sort.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Preface
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Outline</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../asymptotic-analysis.html">
+            
+                <a href="../asymptotic-analysis.html">
+            
+                    
+                    Asymptotic-Analysis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../divide-and-conquer/overview.html">
+            
+                <a href="../divide-and-conquer/overview.html">
+            
+                    
+                    Divide-and-Conquer (DnC)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../divide-and-conquer/overview.html">
+            
+                <a href="../divide-and-conquer/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../divide-and-conquer/multiplication.html">
+            
+                <a href="../divide-and-conquer/multiplication.html">
+            
+                    
+                    Multiplication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../divide-and-conquer/dnc-strategy.html">
+            
+                <a href="../divide-and-conquer/dnc-strategy.html">
+            
+                    
+                    DnC Strategy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../divide-and-conquer/master-method.html">
+            
+                <a href="../divide-and-conquer/master-method.html">
+            
+                    
+                    Master Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../randomization/overview.html">
+            
+                <a href="../randomization/overview.html">
+            
+                    
+                    Randomization
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../randomization/overview.html">
+            
+                <a href="../randomization/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../randomization/discrete-probability.html">
+            
+                <a href="../randomization/discrete-probability.html">
+            
+                    
+                    Discrete Probability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../randomization/randomized-algorithms.html">
+            
+                <a href="../randomization/randomized-algorithms.html">
+            
+                    
+                    Randomized Algorithms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../sorting/overview.html">
+            
+                <a href="../sorting/overview.html">
+            
+                    
+                    Sorting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../sorting/overview.html">
+            
+                <a href="../sorting/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../sorting/selection-sort.html">
+            
+                <a href="../sorting/selection-sort.html">
+            
+                    
+                    Selection Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../sorting/bubble-sort.html">
+            
+                <a href="../sorting/bubble-sort.html">
+            
+                    
+                    Bubble Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../sorting/insertion-sort.html">
+            
+                <a href="../sorting/insertion-sort.html">
+            
+                    
+                    Insertion Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="../sorting/shell-sort.html">
+            
+                <a href="../sorting/shell-sort.html">
+            
+                    
+                    Shell Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" data-path="../sorting/merge-sort.html">
+            
+                <a href="../sorting/merge-sort.html">
+            
+                    
+                    Merge Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.7" data-path="../sorting/heap-sort.html">
+            
+                <a href="../sorting/heap-sort.html">
+            
+                    
+                    Heap Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.8" data-path="../sorting/quick-sort.html">
+            
+                <a href="../sorting/quick-sort.html">
+            
+                    
+                    Quick Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.5" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    Graph Algorithms
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.5.1" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="minimum-spanning-tree.html">
+            
+                <a href="minimum-spanning-tree.html">
+            
+                    
+                    Minimum Spanning Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="shortest-path.html">
+            
+                <a href="shortest-path.html">
+            
+                    
+                    Shortest Path
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../tree/overview.html">
+            
+                <a href="../tree/overview.html">
+            
+                    
+                    Tree
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../tree/overview.html">
+            
+                <a href="../tree/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" >
+            
+                <span>
+            
+                    
+                    Balanced Search Tree
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.2.1" data-path="../tree/avl-tree.html">
+            
+                <a href="../tree/avl-tree.html">
+            
+                    
+                    AVL Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.2" data-path="../tree/red-black-tree.html">
+            
+                <a href="../tree/red-black-tree.html">
+            
+                    
+                    Red-Black Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.3" data-path="../tree/b-tree.html">
+            
+                <a href="../tree/b-tree.html">
+            
+                    
+                    B Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../tree/heap.html">
+            
+                <a href="../tree/heap.html">
+            
+                    
+                    Heap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../searching/overview.html">
+            
+                <a href="../searching/overview.html">
+            
+                    
+                    Searching
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../searching/overview.html">
+            
+                <a href="../searching/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../searching/binary-search.html">
+            
+                <a href="../searching/binary-search.html">
+            
+                    
+                    Binary Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../searching/graph-search.html">
+            
+                <a href="../searching/graph-search.html">
+            
+                    
+                    Graph Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../searching/hash-table.html">
+            
+                <a href="../searching/hash-table.html">
+            
+                    
+                    Hash Table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../searching/string-matching.html">
+            
+                <a href="../searching/string-matching.html">
+            
+                    
+                    String Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../dynamic-programming/overview.html">
+            
+                <a href="../dynamic-programming/overview.html">
+            
+                    
+                    Dynamic Programming
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../dynamic-programming/overview.html">
+            
+                <a href="../dynamic-programming/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../greedy-algorithms/overview.html">
+            
+                <a href="../greedy-algorithms/overview.html">
+            
+                    
+                    Greedy Algorithms
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="../greedy-algorithms/overview.html">
+            
+                <a href="../greedy-algorithms/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Graph Algorithms</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="graph-algorithms">Graph Algorithms</h1>
+<p><a href="https://en.wikipedia.org/wiki/Graph_theory" target="_blank">Graph Theory</a> is a study of <em>graphs</em>, a mathematical structure modeling the associations between objects. It is vital for many computer science problems and worth attention for not only theoretical studies but also practical application development.</p>
+<p>This chapter discusses fundamental graph structures, typical graph problems and correlated algorithm analysis. Specifically, graph searching primitives such as DFS and BFS are the most important techniques throughout the graph algorithms.</p>
+<h2 id="graph-definitions">Graph Definitions</h2>
+<p>Generally, there are two kinds of graphs: <a href="#directed-graph">directed graph</a> and <a href="#undirected-graph">undirected graph</a>. Both of them involve a relationship between <strong>Vertex</strong> <em>V</em> and <strong>Edge</strong> <em>E</em>.</p>
+<h3 id="directed-graph">Directed Graph</h3>
+<p>Given a graph <em>G</em> = (<em>V</em>, <em>E</em>), wherein the <em>V</em> is a set of vertices of <em>G</em> and <em>E</em> is a set of edges going in and out from vertices with directions, connected them together. Specifically, given vertices {1, 2, 3, 4, 5, 6}, a graph can be built like below:</p>
+<figure style="text-align:center">
+  <img src="../images/directed-graph.png">
+  <figcaption>Figure 1. Directed Graph</figcaption>
+</figure>
+
+<p><em>Note: there are cycles (even self cycles, a vertex points to itself) in directed graphs and to be noted that problems like <a href="topological-sort.md">topological sort</a> could not have solutions if cycles present, the directed graph with no cycles is called DAG (directed acyclic graph)</em>.</p>
+<h3 id="undirected-graph">Undirected Graph</h3>
+<p>Unlike <a href="#directed-graph">directed graph</a>, undirected graph only has edges with no directions between connected vertices. Since the relations among vertices have no ordering, there exists no self cycles. Similarly,</p>
+<figure style="text-align:center">
+  <img src="../images/undirected-graph.png">
+  <figcaption>Figure 2. Undirected Graph</figcaption>
+</figure>
+
+<h3 id="degrees">Degrees</h3>
+<p>In an <a href="#undirected-graph">undirected graph</a>, the degree of a vertex means the number of edges associated with that vertex. For instance, the degree of vertex 3 in the above graph is 3;</p>
+<p>While in the <a href="#directed-graph">directed graph</a>, the degree of a vertex is the summation of its <strong>in-degree</strong> and <strong>out-degree</strong>. Such <strong>in-degree</strong> means the number of edges pointing towards the vertex and <strong>out-degree</strong> means the number of edges pointing out of the vertex.</p>
+<p><em>Note: the vertex with zero degree means it is a lonely island, disconnected from any other vertices in the graph</em>.</p>
+<h3 id="connectivity">Connectivity</h3>
+<p>If for any given vertices in an <a href="#undirected-graph">undirected graph</a>, there exists paths reachable from all other vertices, then the graph is <em>connected</em>. Specifically, if an undirected graph <em>G</em> = (<em>V</em>, <em>E</em>) is connected, the number of edges is larger than or equal to number of vertices minus 1: |<em>E</em>| &#x2265; |<em>V</em>| - 1.</p>
+<p>There are only definitions of <strong>strongly connected</strong> and <strong>weakly connected</strong> in a <a href="#directed-graph">directed graph</a>. In a <strong>strongly connected</strong> directed graph <em>G</em> = (<em>V</em>, <em>E</em>), for any two distinct vertices x, y within <em>V</em>, there exists paths from x to y and from y to x;</p>
+<p>Substituting all directional edges of a directed graph with undirected ones could obtain a <em>base graph</em> of the original graph. If such a <em>base graph</em> is <strong>connected</strong>, then the original directed graph is <strong>weakly connected</strong>.</p>
+<h2 id="graph-representations">Graph Representations</h2>
+<p>Two vertices sharing a same edge are <em>adjacent</em> in a graph. To define such relationships among vertices, two practical uses of data structures are introduced: <a href="#adjacency-matrix">adjacency matrix</a> and <a href="#adjacency-list">adjacency list</a>.</p>
+<h3 id="adjacency-matrix">Adjacency Matrix</h3>
+<p>This matrix (e.g. <em>adj[][]</em>) is a 2D array with size |V| &#x2717; |V|; In an undirected graph, if vertex <em>a</em> and vertex <em>b</em> are connected, then adj[a][b] = 1 and adj[b][a] = 1; if there are no edges between say vertex <em>e</em> and vertex <em>c</em>, then adj[e][c] = 0, adj[c][e] = 0;</p>
+<p>For a directed graph, the matrix cell value depends on the existance of directional edges; If vertex <em>a</em> has an edge going outward to vertex <em>b</em> while vertex <em>b</em> has no edges going inward to vertex <em>a</em>, then adj[a][b] = 1 but adj[b][a] = 0</p>
+<figure style="text-align:center">
+  <img src="../images/adjacency-matrix.jpg">
+  <figcaption>Figure 3. Adjacency Matrices of a Directed Graph and an Undirected Graph</figcaption>
+</figure>
+
+<p>Adjacency matrix is practical when the graph is <strong>dense</strong> (at least one edge going in between two vertices) and finding the existence of edges is immediate (LOOKUP costs &#x39F;(1)). It is less so if the graph is sparse (the graph topology structure approaches a <em><strong>forest</strong></em> rather than a graph).</p>
+<h3 id="adjacency-list">Adjacency List</h3>
+<p>Adjacency list is an array of linkedlist in design and it costs only &#x39F;(|V| + |E|) compared to <a href="#adjacency-matrix">adjacency matrix</a>. In addition, the array can be dynamic which means adding vertices to a graph is easier than a static structure like adjacency matrix.</p>
+<figure style="text-align:center">
+  <img src="../images/adjacency-list.png">
+  Figure 4. Adjacency List of a Directed Graph
+</figure>
+
+<p>Though it normally costs &#x39F;(|E|) time to LOOKUP edge associations, it is a preferable choice than adjacency matrix in a massive-scale data network such as WEB.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="../searching/graph-search.html">Breadth-First Search</a> - a searching primitive prototype for many important algorithms like [Minimum Spanning Tree] and [Dijkstra Shortest Path].</li>
+<li><a href="../searching/graph-search.html">Depth-First Search</a> - in contrast to BFS, DFS provides a simple recursive implementation.</li>
+<li><a href="shortest-path.html">Shortest Path Algorithms</a> - a prevalent type of graph algorithm in practice, e.g. find a shortest path from location A to location B in map.</li>
+<li><a href="minimum-spanning-tree.html">Minimum Spanning Tree</a> - a technique to transform graphs to trees</li>
+<li><a href="minimum-cut.md">Graph Minimum-Cut</a> - split the graph into different groups for applications like <a href="https://en.wikipedia.org/wiki/Community_structure#Algorithms_for_finding_communities" target="_blank">community finding</a>.</li>
+<li><a href="topological-sort.md">Topological Sort</a> - sort a <a href="#directed-graph">DAG</a> graph with respect to its topological relations.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../sorting/quick-sort.html" class="navigation navigation-prev " aria-label="Previous page: Quick Sort">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="overview.html" class="navigation navigation-next " aria-label="Next page: Overview">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Graph Algorithms","level":"2.5","depth":1,"next":{"title":"Overview","level":"2.5.1","depth":2,"path":"graph-algorithms/overview.md","ref":"graph-algorithms/overview.md","articles":[]},"previous":{"title":"Quick Sort","level":"2.4.8","depth":2,"path":"sorting/quick-sort.md","ref":"sorting/quick-sort.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"graph-algorithms/overview.md","mtime":"2018-01-27T23:36:19.723Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-31T23:48:42.198Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

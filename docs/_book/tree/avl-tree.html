@@ -1,0 +1,832 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>AVL Tree · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="red-black-tree.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Preface
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Outline</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../asymptotic-analysis.html">
+            
+                <a href="../asymptotic-analysis.html">
+            
+                    
+                    Asymptotic-Analysis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../divide-and-conquer/overview.html">
+            
+                <a href="../divide-and-conquer/overview.html">
+            
+                    
+                    Divide-and-Conquer (DnC)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../divide-and-conquer/overview.html">
+            
+                <a href="../divide-and-conquer/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../divide-and-conquer/multiplication.html">
+            
+                <a href="../divide-and-conquer/multiplication.html">
+            
+                    
+                    Multiplication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../divide-and-conquer/dnc-strategy.html">
+            
+                <a href="../divide-and-conquer/dnc-strategy.html">
+            
+                    
+                    DnC Strategy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../divide-and-conquer/master-method.html">
+            
+                <a href="../divide-and-conquer/master-method.html">
+            
+                    
+                    Master Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../randomization/overview.html">
+            
+                <a href="../randomization/overview.html">
+            
+                    
+                    Randomization
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../randomization/overview.html">
+            
+                <a href="../randomization/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../randomization/discrete-probability.html">
+            
+                <a href="../randomization/discrete-probability.html">
+            
+                    
+                    Discrete Probability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../randomization/randomized-algorithms.html">
+            
+                <a href="../randomization/randomized-algorithms.html">
+            
+                    
+                    Randomized Algorithms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../sorting/overview.html">
+            
+                <a href="../sorting/overview.html">
+            
+                    
+                    Sorting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../sorting/overview.html">
+            
+                <a href="../sorting/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../sorting/selection-sort.html">
+            
+                <a href="../sorting/selection-sort.html">
+            
+                    
+                    Selection Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../sorting/bubble-sort.html">
+            
+                <a href="../sorting/bubble-sort.html">
+            
+                    
+                    Bubble Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../sorting/insertion-sort.html">
+            
+                <a href="../sorting/insertion-sort.html">
+            
+                    
+                    Insertion Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="../sorting/shell-sort.html">
+            
+                <a href="../sorting/shell-sort.html">
+            
+                    
+                    Shell Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" data-path="../sorting/merge-sort.html">
+            
+                <a href="../sorting/merge-sort.html">
+            
+                    
+                    Merge Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.7" data-path="../sorting/heap-sort.html">
+            
+                <a href="../sorting/heap-sort.html">
+            
+                    
+                    Heap Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.8" data-path="../sorting/quick-sort.html">
+            
+                <a href="../sorting/quick-sort.html">
+            
+                    
+                    Quick Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../graph-algorithms/overview.html">
+            
+                <a href="../graph-algorithms/overview.html">
+            
+                    
+                    Graph Algorithms
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../graph-algorithms/overview.html">
+            
+                <a href="../graph-algorithms/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../graph-algorithms/minimum-spanning-tree.html">
+            
+                <a href="../graph-algorithms/minimum-spanning-tree.html">
+            
+                    
+                    Minimum Spanning Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../graph-algorithms/shortest-path.html">
+            
+                <a href="../graph-algorithms/shortest-path.html">
+            
+                    
+                    Shortest Path
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    Tree
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" >
+            
+                <span>
+            
+                    
+                    Balanced Search Tree
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.6.2.1" data-path="avl-tree.html">
+            
+                <a href="avl-tree.html">
+            
+                    
+                    AVL Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.2" data-path="red-black-tree.html">
+            
+                <a href="red-black-tree.html">
+            
+                    
+                    Red-Black Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.3" data-path="b-tree.html">
+            
+                <a href="b-tree.html">
+            
+                    
+                    B Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="heap.html">
+            
+                <a href="heap.html">
+            
+                    
+                    Heap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../searching/overview.html">
+            
+                <a href="../searching/overview.html">
+            
+                    
+                    Searching
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../searching/overview.html">
+            
+                <a href="../searching/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../searching/binary-search.html">
+            
+                <a href="../searching/binary-search.html">
+            
+                    
+                    Binary Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../searching/graph-search.html">
+            
+                <a href="../searching/graph-search.html">
+            
+                    
+                    Graph Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../searching/hash-table.html">
+            
+                <a href="../searching/hash-table.html">
+            
+                    
+                    Hash Table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../searching/string-matching.html">
+            
+                <a href="../searching/string-matching.html">
+            
+                    
+                    String Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../dynamic-programming/overview.html">
+            
+                <a href="../dynamic-programming/overview.html">
+            
+                    
+                    Dynamic Programming
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../dynamic-programming/overview.html">
+            
+                <a href="../dynamic-programming/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../greedy-algorithms/overview.html">
+            
+                <a href="../greedy-algorithms/overview.html">
+            
+                    
+                    Greedy Algorithms
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="../greedy-algorithms/overview.html">
+            
+                <a href="../greedy-algorithms/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >AVL Tree</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="adelson-velsky-and-landis-avl-tree">Adelson-Velsky and Landis (AVL) Tree</h1>
+<p><a href="#avl-tree">AVL Tree</a> is a type of <a href="../searching/binary-search.html">balanced binary search tree</a> which is early invented data structure in binary search solutions. It requires a stable property that the absolute difference between the <em>height</em> of the <em>left</em> subtree of <em>root</em> and the <em>height</em> of the <em>right</em> subtree of <em>root</em> is no larger than 1.</p>
+<h2 id="height-guarantee">Height Guarantee</h2>
+<p><em>Formal Claim</em>:</p>
+<p>For every <a href="#avl-tree">AVL Tree</a> with &#x1D4C3; nodes, its <em>height</em> &#x1D4BD; &#x2A7D; 2 &#x22C5; log(n).</p>
+<p><em><strong>Proof</strong></em>:</p>
+<p>define <em>N<sub>h</sub></em> is the minimum number of nodes in an AVL Tree of <em>height</em> h, then</p>
+<p><em>N<sub>h</sub></em> = 1 + <em>N<sub>h-1</sub></em> + <em>N<sub>h-2</sub></em>, <em>N<sub>h</sub></em> &gt; 2 <em>N<sub>h-2</sub></em></p>
+<p>Obviously, n = &#x398;(2<sup>h/2</sup>) (given that <em>N<sub>h</sub></em> = n, <em>N<sub>0</sub></em> = 1, <em>N<sub>1</sub></em> = 2), h &lt; 2 &#x22C5; log(n)</p>
+<p><em>A more subtle claim</em>:</p>
+<p>a <a href="#avl-tree">AVL Tree</a> has most height of 1.44 &#x22C5; log(n + 2).</p>
+<p><em><strong>Proof</strong></em>:</p>
+<p><em>N<sub>h</sub></em> has a lower bound &#x3A9;(k<sup>h</sup>), then</p>
+<p>substituting <em>c &#x22C5; k<sup>h</sup></em> with both sides of the recurrence relation above yields:</p>
+<p>c &#x22C5; k<sup>h</sup> &#x2A7D; 1 + c &#x22C5; k<sup>h-1</sup> + c &#x22C5; k<sup>h-2</sup> = &#x3A4;(n)</p>
+<p>in which to find out a <em>c, h<sub>0</sub></em> such that for every <em>h</em> &gt; <em>h<sub>0</sub></em>, the inequality above holds.</p>
+<p>Divided both sides by c &#x22C5; k<sup>h-2</sup>:</p>
+<p>k<sup>2</sup> &#x2A7D; k<sup>2-h</sup>/c + k + 1</p>
+<p>wherein the term k<sup>2-h</sup> becomes relatively small when h grows very large, then the inequality will be satisfied if value of k is smaller than the solution to the equation: k<sup>2</sup> = k + 1, which is the <a href="https://en.wikipedia.org/wiki/Golden_ratio" target="_blank">golden ratio</a> &#x3C6; = 1.618... &#x2248; 1.62</p>
+<p>Hence, n = &#x3A9;(&#x3C6;<sup>h</sup>), conversely, h = &#x39F;(log<sub>&#x3C6;</sub>n) &#x2248; 1.44 &#x22C5; log (n + 2)</p>
+<h2 id="performance-comparisons">Performance Comparisons</h2>
+<p>comparing with <a href="red-black-tree.html">Red-Black Tree</a>, <a href="#avl-tree">AVL Tree</a> has a better lookup performance given its relative shorter <em>height</em> of the tree: 1.44 &#x22C5; log(n + 2) &lt; 2 &#x22C5; log(n + 1);</p>
+<p>While the Red-Black Tree requires less costs during tree adjustments when INSERTION or DELETION operations happen than the AVL Tree does;</p>
+<p>In conclusion, the AVL Tree is performant if used in scenarios where the number of element lookup dominates the number of element updates.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="red-black-tree.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Red-Black Tree">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"AVL Tree","level":"2.6.2.1","depth":3,"next":{"title":"Red-Black Tree","level":"2.6.2.2","depth":3,"path":"tree/red-black-tree.md","ref":"tree/red-black-tree.md","articles":[]},"previous":{"title":"Balanced Search Tree","level":"2.6.2","depth":2,"ref":"","articles":[{"title":"AVL Tree","level":"2.6.2.1","depth":3,"path":"tree/avl-tree.md","ref":"tree/avl-tree.md","articles":[]},{"title":"Red-Black Tree","level":"2.6.2.2","depth":3,"path":"tree/red-black-tree.md","ref":"tree/red-black-tree.md","articles":[]},{"title":"B Tree","level":"2.6.2.3","depth":3,"path":"tree/b-tree.md","ref":"tree/b-tree.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tree/avl-tree.md","mtime":"2018-01-27T22:06:49.644Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-31T23:46:50.251Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

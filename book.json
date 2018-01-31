@@ -1,0 +1,7 @@
+{
+  "root": "./docs",
+  "title": "Algorithm Cracker",
+  "description": "Comprehensive algorithms solution to help engineers prepare their interviews and future study",
+  "author": "aaronoah",
+  "gitbook": ">= 3.0.0"
+}

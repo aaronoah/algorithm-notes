@@ -1,0 +1,35 @@
+{
+  "name": "algorithm-cracker",
+  "version": "1.0.0",
+  "description": "Comprehensive algorithms solution to help engineers prepare their interviews and future study",
+  "main": "index.js",
+  "scripts": {
+    "serve": "rm -rf ./docs/_book/ && gitbook serve ./docs",
+    "build": "rm -rf build/ && gitbook build docs/ build/",
+    "lint": "jsonlint book.json && find ./docs -name \\*.md -exec markdown-link-check {} \\;",
+    "clean": "rm -rf ./docs/_book/",
+    "test": "npm test"
+  },
+  "pre-commit": [
+    "lint",
+    "clean"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronoah/algorithm-cracker.git"
+  },
+  "keywords": [
+    "algorithms"
+  ],
+  "author": "aaronzhao39 <aaron.elite1993@gmail.com> (http://hqstudio.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aaronoah/algorithm-cracker/issues"
+  },
+  "homepage": "https://github.com/aaronoah/algorithm-cracker#readme",
+  "devDependencies": {
+    "gitbook-cli": "^2.3.2",
+    "jsonlint": "^1.6.2",
+    "markdown-link-check": "^3.1.6"
+  }
+}

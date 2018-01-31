@@ -1,0 +1,853 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Sorting · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="overview.html" />
+    
+    
+    <link rel="prev" href="../randomization/randomized-algorithms.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Preface
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Outline</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../asymptotic-analysis.html">
+            
+                <a href="../asymptotic-analysis.html">
+            
+                    
+                    Asymptotic-Analysis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../divide-and-conquer/overview.html">
+            
+                <a href="../divide-and-conquer/overview.html">
+            
+                    
+                    Divide-and-Conquer (DnC)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../divide-and-conquer/overview.html">
+            
+                <a href="../divide-and-conquer/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../divide-and-conquer/multiplication.html">
+            
+                <a href="../divide-and-conquer/multiplication.html">
+            
+                    
+                    Multiplication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../divide-and-conquer/dnc-strategy.html">
+            
+                <a href="../divide-and-conquer/dnc-strategy.html">
+            
+                    
+                    DnC Strategy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../divide-and-conquer/master-method.html">
+            
+                <a href="../divide-and-conquer/master-method.html">
+            
+                    
+                    Master Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../randomization/overview.html">
+            
+                <a href="../randomization/overview.html">
+            
+                    
+                    Randomization
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../randomization/overview.html">
+            
+                <a href="../randomization/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../randomization/discrete-probability.html">
+            
+                <a href="../randomization/discrete-probability.html">
+            
+                    
+                    Discrete Probability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../randomization/randomized-algorithms.html">
+            
+                <a href="../randomization/randomized-algorithms.html">
+            
+                    
+                    Randomized Algorithms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.4" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    Sorting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.4.1" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="selection-sort.html">
+            
+                <a href="selection-sort.html">
+            
+                    
+                    Selection Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="bubble-sort.html">
+            
+                <a href="bubble-sort.html">
+            
+                    
+                    Bubble Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="insertion-sort.html">
+            
+                <a href="insertion-sort.html">
+            
+                    
+                    Insertion Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="shell-sort.html">
+            
+                <a href="shell-sort.html">
+            
+                    
+                    Shell Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" data-path="merge-sort.html">
+            
+                <a href="merge-sort.html">
+            
+                    
+                    Merge Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.7" data-path="heap-sort.html">
+            
+                <a href="heap-sort.html">
+            
+                    
+                    Heap Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.8" data-path="quick-sort.html">
+            
+                <a href="quick-sort.html">
+            
+                    
+                    Quick Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../graph-algorithms/overview.html">
+            
+                <a href="../graph-algorithms/overview.html">
+            
+                    
+                    Graph Algorithms
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../graph-algorithms/overview.html">
+            
+                <a href="../graph-algorithms/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../graph-algorithms/minimum-spanning-tree.html">
+            
+                <a href="../graph-algorithms/minimum-spanning-tree.html">
+            
+                    
+                    Minimum Spanning Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../graph-algorithms/shortest-path.html">
+            
+                <a href="../graph-algorithms/shortest-path.html">
+            
+                    
+                    Shortest Path
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../tree/overview.html">
+            
+                <a href="../tree/overview.html">
+            
+                    
+                    Tree
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../tree/overview.html">
+            
+                <a href="../tree/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" >
+            
+                <span>
+            
+                    
+                    Balanced Search Tree
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.2.1" data-path="../tree/avl-tree.html">
+            
+                <a href="../tree/avl-tree.html">
+            
+                    
+                    AVL Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.2" data-path="../tree/red-black-tree.html">
+            
+                <a href="../tree/red-black-tree.html">
+            
+                    
+                    Red-Black Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.3" data-path="../tree/b-tree.html">
+            
+                <a href="../tree/b-tree.html">
+            
+                    
+                    B Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../tree/heap.html">
+            
+                <a href="../tree/heap.html">
+            
+                    
+                    Heap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../searching/overview.html">
+            
+                <a href="../searching/overview.html">
+            
+                    
+                    Searching
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../searching/overview.html">
+            
+                <a href="../searching/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../searching/binary-search.html">
+            
+                <a href="../searching/binary-search.html">
+            
+                    
+                    Binary Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../searching/graph-search.html">
+            
+                <a href="../searching/graph-search.html">
+            
+                    
+                    Graph Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../searching/hash-table.html">
+            
+                <a href="../searching/hash-table.html">
+            
+                    
+                    Hash Table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../searching/string-matching.html">
+            
+                <a href="../searching/string-matching.html">
+            
+                    
+                    String Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../dynamic-programming/overview.html">
+            
+                <a href="../dynamic-programming/overview.html">
+            
+                    
+                    Dynamic Programming
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../dynamic-programming/overview.html">
+            
+                <a href="../dynamic-programming/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../greedy-algorithms/overview.html">
+            
+                <a href="../greedy-algorithms/overview.html">
+            
+                    
+                    Greedy Algorithms
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="../greedy-algorithms/overview.html">
+            
+                <a href="../greedy-algorithms/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Sorting</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="sorting">Sorting</h1>
+<p>Many of programs we see today have something to do with sorting, that given an unsorted, randomly distributed array or list, research the best approach to sort in accordance to a specified alphabetical or numerical order.</p>
+<h2 id="terminologies">Terminologies</h2>
+<p>Key concepts are introduced in this chapter such as <a href="#stable-sort">Stable Sort</a>.</p>
+<h3 id="total-order">Total Order</h3>
+<p><a href="https://en.wikipedia.org/wiki/Total_order" target="_blank">Total Order</a> is a binary relation on a set of elements that satisfies:</p>
+<ul>
+<li>Antisymmetry: if a &#x2A7E; b and b &#x2A7E; a, then a = b</li>
+<li>Transitivity: if a &#x2A7D; b and b &#x2A7D; c, then a &#x2A7D; c</li>
+<li>Totality: either a &#x2A7D; b or b &#x2A7D; a or both</li>
+</ul>
+<h3 id="adaptive-sort">Adaptive Sort</h3>
+<p>A sorting algorithm is an adaptive sort scheme if it takes advantage of existing order of an original inputs. The presortedness of the input sequence benefits the sorting algorithm to achieve better running time.</p>
+<h3 id="comparison-based-sort">Comparison-based Sort</h3>
+<p>Sorting algorithms that sort a list of elements base <em>only</em> on the <em>comparisons of pairs</em> without knowing other aspects of elements is <strong>comparison-based sort</strong>.</p>
+<p><em>Note: <a href="#comparison-based-sort">Comparison-based Sort</a> assumes no preliminary knowledge about input arrays and thus the &quot;general-purpose sorting method&quot;; if not, some <a href="non-comparison-sort.md">non-comparison based sort</a> could be highly useful.</em></p>
+<h4 id="sorting-lower-bound">Sorting Lower Bound</h4>
+<p>Formal Def: every <a href="#comparison-based-sort">comparison-based sorting</a> has the <a href="../asymptotic-analysis.html">worst-case</a> running time of &#x3A9;(n &#x22C5; log n).</p>
+<p><em><strong>Proof</strong></em>: given a randomly distributed array of length n, assume the maximal compares required to sort the entire array is k and there is <em>at least</em> n! permutations to sort (each permutation is possible to yield the correct outcome); In each comparison, we obtain either a <strong>True</strong> or <strong>False</strong> that the element is displaced in the right location, then:</p>
+<p>2<sup>k</sup> &#x2A7E; n!, by <a href="https://en.wikipedia.org/wiki/Pigeonhole_principle" target="_blank">pigeonhole principle</a>, 2<sup>k</sup> &#x2A7E; (n/2)<sup>n/2</sup>, k &#x2A7E; (n/2) &#x22C5; log (n/2)</p>
+<p>According to <a href="../asymptotic-analysis.html">asymptotic analysis</a>, noting that k &#x2A7E; cn &#x22C5; log (cn), &#x3A4;(n) = &#x3A9;(n &#x22C5; log n)</p>
+<h3 id="in-place-sort">In-place Sort</h3>
+<p>Sorting scheme that only a constant number of elements or memory spaces are required to store outside the original array is In-place Sort.</p>
+<p>In-place Sort only requires &#x39F;(1) extra space to sort the array. It usually sorts on the original array thus an useful approach to minimize the memory usage while sorting.</p>
+<h3 id="stable-sort">Stable Sort</h3>
+<p>Stable sorting algorithm maintains the relative order of elements with same value. Mathematically, given two records &#x211B; and &#x1D4AC; with same value, &#x211B; precedes &#x1D4AC; in the original array, then a <a href="#stable-sort">Stable Sort</a> will produce a sorted array with &#x211B; comes before &#x1D4AC;.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="selection-sort.html">Selection Sort</a> - a naive swapping-based sorting algorithm.</li>
+<li><a href="bubble-sort.html">Bubble Sort</a> - an improved swapping-based sorting technique.</li>
+<li><a href="insertion-sort.html">Insertion Sort</a> - mostly used approach in common sorting tasks.</li>
+<li><a href="shell-sort.html">Shell Sort</a> - a compensating algorithm for <a href="../asymptotic-analysis.html">worst-case</a> <a href="insertion-sort.html">insertion sort</a>.</li>
+<li><a href="heap-sort.html">Heap Sort</a> - a type of sorting technique based on <a href="../tree/heap.html">min-heap</a> or <a href="../tree/heap.html">max-heap</a> data structures.</li>
+<li><a href="merge-sort.html">Merge Sort</a> - a typical <a href="../divide-and-conquer/overview.html">DnC</a> strategy in sorting tasks.</li>
+<li><a href="quick-sort.html">Quick Sort</a> - a performant algorithm combined with both <a href="../divide-and-conquer/overview.html">DnC</a> and <a href="../randomization/overview.html">Randomization</a></li>
+<li><a href="non-comparison-sort.md">Non-Comparison Sort</a> - intro to several non-comparison based sorting algorithms</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.ics.uci.edu/~eppstein/161/960116.html" target="_blank">ICS-161 Design and Analysis of Algorithms, UCI</a> - Lecture Notes in Jan 16, 1996</li>
+<li><a href="https://courses.cs.washington.edu/courses/cse373/17wi/lectures/sorting.pptx" target="_blank">CSE-373 Data Structure &amp; Algorithms, UW</a> - Lecture Notes, 2017</li>
+<li><a href="http://www.cs.toronto.edu/~tfowler/csc263/Lecture13.pdf" target="_blank">CSC-263 Lecture 13, U of Toronto</a> - Lecture notes, 2006</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../randomization/randomized-algorithms.html" class="navigation navigation-prev " aria-label="Previous page: Randomized Algorithms">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="overview.html" class="navigation navigation-next " aria-label="Next page: Overview">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Sorting","level":"2.4","depth":1,"next":{"title":"Overview","level":"2.4.1","depth":2,"path":"sorting/overview.md","ref":"sorting/overview.md","articles":[]},"previous":{"title":"Randomized Algorithms","level":"2.3.3","depth":2,"path":"randomization/randomized-algorithms.md","ref":"randomization/randomized-algorithms.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sorting/overview.md","mtime":"2017-10-26T16:41:33.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-31T23:48:42.198Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

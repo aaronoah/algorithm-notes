@@ -1,0 +1,910 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>String Search · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../dynamic-programming/overview.html" />
+    
+    
+    <link rel="prev" href="hash-table.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Preface
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Outline</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../asymptotic-analysis.html">
+            
+                <a href="../asymptotic-analysis.html">
+            
+                    
+                    Asymptotic-Analysis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../divide-and-conquer/overview.html">
+            
+                <a href="../divide-and-conquer/overview.html">
+            
+                    
+                    Divide-and-Conquer (DnC)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../divide-and-conquer/overview.html">
+            
+                <a href="../divide-and-conquer/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../divide-and-conquer/multiplication.html">
+            
+                <a href="../divide-and-conquer/multiplication.html">
+            
+                    
+                    Multiplication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../divide-and-conquer/dnc-strategy.html">
+            
+                <a href="../divide-and-conquer/dnc-strategy.html">
+            
+                    
+                    DnC Strategy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../divide-and-conquer/master-method.html">
+            
+                <a href="../divide-and-conquer/master-method.html">
+            
+                    
+                    Master Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../randomization/overview.html">
+            
+                <a href="../randomization/overview.html">
+            
+                    
+                    Randomization
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../randomization/overview.html">
+            
+                <a href="../randomization/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../randomization/discrete-probability.html">
+            
+                <a href="../randomization/discrete-probability.html">
+            
+                    
+                    Discrete Probability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../randomization/randomized-algorithms.html">
+            
+                <a href="../randomization/randomized-algorithms.html">
+            
+                    
+                    Randomized Algorithms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../sorting/overview.html">
+            
+                <a href="../sorting/overview.html">
+            
+                    
+                    Sorting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../sorting/overview.html">
+            
+                <a href="../sorting/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../sorting/selection-sort.html">
+            
+                <a href="../sorting/selection-sort.html">
+            
+                    
+                    Selection Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../sorting/bubble-sort.html">
+            
+                <a href="../sorting/bubble-sort.html">
+            
+                    
+                    Bubble Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../sorting/insertion-sort.html">
+            
+                <a href="../sorting/insertion-sort.html">
+            
+                    
+                    Insertion Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="../sorting/shell-sort.html">
+            
+                <a href="../sorting/shell-sort.html">
+            
+                    
+                    Shell Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" data-path="../sorting/merge-sort.html">
+            
+                <a href="../sorting/merge-sort.html">
+            
+                    
+                    Merge Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.7" data-path="../sorting/heap-sort.html">
+            
+                <a href="../sorting/heap-sort.html">
+            
+                    
+                    Heap Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.8" data-path="../sorting/quick-sort.html">
+            
+                <a href="../sorting/quick-sort.html">
+            
+                    
+                    Quick Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../graph-algorithms/overview.html">
+            
+                <a href="../graph-algorithms/overview.html">
+            
+                    
+                    Graph Algorithms
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../graph-algorithms/overview.html">
+            
+                <a href="../graph-algorithms/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../graph-algorithms/minimum-spanning-tree.html">
+            
+                <a href="../graph-algorithms/minimum-spanning-tree.html">
+            
+                    
+                    Minimum Spanning Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../graph-algorithms/shortest-path.html">
+            
+                <a href="../graph-algorithms/shortest-path.html">
+            
+                    
+                    Shortest Path
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../tree/overview.html">
+            
+                <a href="../tree/overview.html">
+            
+                    
+                    Tree
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../tree/overview.html">
+            
+                <a href="../tree/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" >
+            
+                <span>
+            
+                    
+                    Balanced Search Tree
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.2.1" data-path="../tree/avl-tree.html">
+            
+                <a href="../tree/avl-tree.html">
+            
+                    
+                    AVL Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.2" data-path="../tree/red-black-tree.html">
+            
+                <a href="../tree/red-black-tree.html">
+            
+                    
+                    Red-Black Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.3" data-path="../tree/b-tree.html">
+            
+                <a href="../tree/b-tree.html">
+            
+                    
+                    B Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../tree/heap.html">
+            
+                <a href="../tree/heap.html">
+            
+                    
+                    Heap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    Searching
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="binary-search.html">
+            
+                <a href="binary-search.html">
+            
+                    
+                    Binary Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="graph-search.html">
+            
+                <a href="graph-search.html">
+            
+                    
+                    Graph Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="hash-table.html">
+            
+                <a href="hash-table.html">
+            
+                    
+                    Hash Table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.7.5" data-path="string-matching.html">
+            
+                <a href="string-matching.html">
+            
+                    
+                    String Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../dynamic-programming/overview.html">
+            
+                <a href="../dynamic-programming/overview.html">
+            
+                    
+                    Dynamic Programming
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../dynamic-programming/overview.html">
+            
+                <a href="../dynamic-programming/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../greedy-algorithms/overview.html">
+            
+                <a href="../greedy-algorithms/overview.html">
+            
+                    
+                    Greedy Algorithms
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="../greedy-algorithms/overview.html">
+            
+                <a href="../greedy-algorithms/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >String Search</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="string-matching">String Matching</h1>
+<p>Given a text <a href="https://en.wikipedia.org/wiki/String_(computer_science" target="_blank">string</a>) <em>T</em> and a pattern <em>P</em> (a substring, a character or a <a href="https://en.wikipedia.org/wiki/Regular_expression" target="_blank">Regular Expression</a>), which are both in the defined character set &#x2211;, find some/all occurrences of <em>P</em> within <em>T</em> is termed the task of <a href="#string-matching">string matching</a>.</p>
+<p>There are multiple string-matching applications in computing such as the popular <a href="https://en.wikipedia.org/wiki/Grep" target="_blank"><em>grep</em></a> UNIX tool in finding patterns within data sets.</p>
+<p>Generally, there are two kinds of techniques in string matching tasks:</p>
+<ol>
+<li><p>one-shot algorithmic approach: &#x39F;(T) time in average, examples include <a href="#knuth-morris-pratt-algorithm">KMP algorithm</a>, <a href="#rabin-karp-algorithm">Rabin-Karp algorithm</a>.</p>
+</li>
+<li><p>static data structures approach: preprocess string <em>T</em> and optimally obtain a &#x39F;(P) time and &#x39F;(T) space.</p>
+</li>
+</ol>
+<h2 id="one-shot-approach">One-shot Approach</h2>
+<p>Obviously, algorithmic solutions that needs nearly no preprocessing are categorized as one-shot. There are various methods trying to improve upon the naive string match such as <a href="#rabin-karp-algorithm">Rabin-Karp algorithm</a> and <a href="#knuth-morris-pratt-algorithm">KMP algorithm</a>.</p>
+<h3 id="naive-string-match">Naive String Match</h3>
+<p>A naive algorithm would be built under a principle of <a href="https://en.wikipedia.org/wiki/Brute-force_search" target="_blank">&quot;brute-force&quot; search</a> that beginning from each character occurrence of target strings (<em>t</em>), find whether the source string (<em>s</em>) matches a successive portion of target strings (<em>t</em>).</p>
+<pre><code>NAIVE_STRING_MATCH(s, t)
+  for i in range length(t) - length(s)
+    if s = t.substring(i, i+length(s))
+      return true
+  return false
+</code></pre><p>It takes &#x39F;(|s|) for each substring comparison and the total number of comparison is &#x39F;(|t| - |s|), then</p>
+<p>&#x3A4;(n) = &#x39F;(|s| &#x22C5; |t|) &#x2248; <a href="../asymptotic-analysis.html">quadratic time</a></p>
+<h3 id="rabin-karp-algorithm">Rabin-Karp Algorithm</h3>
+<p>Rabin-Karp or Karp-Rabin algorithm, is a string searching primitive that uses <a href="hash-table.html">hashing</a> technique. Specifically, it requires to compare a hash value for the <em>pattern</em> with distinct hashes of the sub-text in the target string.</p>
+<p>If hash computations are performed each time on sub-text, the overall complexity is even higher than the <a href="#naive-string-match">naive string match</a>. Therefore, a <a href="#rolling-hash">rolling hash</a> technique is introduced. The design of such <a href="hash-table.html">hash function</a> varies in different scenarios to provide a reasonable computation complexity and some magnitude of randomness. In the following discussions, it is assumed the hash function &#x1D4BD; satisfies the <a href="hash-table.html">simple uniform hashing</a>.</p>
+<h4 id="rolling-hash">Rolling Hash</h4>
+<p>A rolling hash is a hash function that process inputs within a sliding window, it is powerful to rapidly calculate the hash value for the new entry without having to rehash it.</p>
+<p>Given a string <em>ABCDBBCA</em> and a pattern <em>BCDB</em>; compute the hash value of pattern &#x1D4BD;(BCDB) and the first sub-text in the string &#x1D4BD;(ABCD), the result does not match, thus slide the window right by 1 slot; generate the new hash value &#x1D4BD;(BCDB) by rolling hash (append a character <em>B</em> to the end of old hash value and skip the tail character value <em>A</em> from the old hash value); the new results have a match, procedure ends.</p>
+<figure style="text-align:center">
+  <img src="../images/rolling-hash.png">
+  <figcaption>Figure 1. Rolling Hash Example</figcaption>
+</figure>
+
+<pre><code>RABIN_KARP(s, t)
+  hs := hash(s)
+  ht := hash(t[1..length(s)])
+  for i in range length(t) - length(s)
+    if hs = ht
+      return true
+    else
+      ht := ht.append(t[length(s) + i])
+      ht := ht.skip(i)
+  return false
+</code></pre><p>Since the hash function processes the The expected running time for Rabin-Karp algorithm in string matching is &#x39F;(|s| + (|t| - |s|) &#x22C5; cost(&#x1D4BD;)); In the naive version of hashing, the cost of &#x1D4BD; will be persistent as |s|, the overall complexity would be &#x39F;(|t| &#x22C5; |s|) &#x2248; <a href="../asymptotic-analysis.html">quadratic time</a>. By adopting <a href="#rolling-hash">rolling hash</a>, the cost of hash function could be reduced down to &#x39F;(1), thus time complexity for <a href="#rabin-karp-algorithm">Rabin-Karp algorithm</a> is &#x39F;(|t|) &#x2248; <a href="../asymptotic-analysis.html">linear time</a></p>
+<h3 id="knuth-morris-pratt-algorithm">Knuth-Morris-Pratt Algorithm</h3>
+<p>(this section is not yet covered)</p>
+<h2 id="static-data-structures">Static Data Structures</h2>
+<p>In the context of massive dataset of WEB, preprocessing before performing searching or statistical operations is necessary to reduce the time complexity, even demanding in the real-time systems.</p>
+<h3 id="tries">Tries</h3>
+<p>A trie, also called radix tree or prefix tree, as the name suggests, is a tree-alike data structure for searching primitives (trie comes from the word <em>retrieval</em>). It sacrifices memory space in exchange of better searching performance and it satisfies the following properties:</p>
+<ol>
+<li>the root of trie contains <em>NULL</em> entries.</li>
+<li>strings with same prefixes share the common ancestors in the trie.</li>
+<li>the root-to-leaf path represents the entire string and terminated with a special character $ that is not in the set &#x2211;.</li>
+</ol>
+<p>Specifically, given an input: {an, ana, ann, anna, anne}, constructing a trie:</p>
+<figure style="text-align:center">
+  <img src="../images/trie_1.png">
+  <figcaption>Figure 1. Trie Representation in a Tree</figcaption>
+</figure>
+
+<p><em>Note: there are some denotations mark the <strong>edges</strong> as characters instead of nodes, which conveys the same meaning</em>.</p>
+<p>Since the generation of a trie is one-pass and remain static afterwards, it is wise to contract some of the adjacent edges (nodes) which have a single descendent to one edge (node) for searching simplicity. Then, a <strong>compressed trie</strong> would look like:</p>
+<figure style="text-align:center">
+  <img src="../images/trie_2.png">
+  <figcaption>Figure 2. Compressed Trie</figcaption>
+</figure>
+
+<p><em>Note: it is valid to contract the termination character ($) to the final character node, the version provided here only assists comprehension</em>.</p>
+<p>Roughly, query strings in the <a href="#tries">Trie</a> cost &#x39F;(P) in time (<strong>LOOKUP time is independent of the number of strings in the trie!</strong>) and &#x39F;(T) in space; Nonetheless, there are slight variations among different data representations, if you are interested, check <a href="https://courses.csail.mit.edu/6.851/spring12/lectures/L16.pdf" target="_blank">here</a>.</p>
+<p><em>Note: if the character set is ASCII based, it is recommended to use static data structures such as array (e.g. array[1..128]) to store children of a node instead of a dynamic structure like list (which costs linear time than constant to search for the prefixes and the cost of querying strings exceeds &#x39F;(P))</em>.</p>
+<ul>
+<li>Applications</li>
+</ul>
+<p>In the world of Internet, Trie has numerous useful applications. For instance, the autocomplete feature of search box in various websites such as Google, can be embedded with a Trie data structure whenever you type in a letter, the Trie gets pruned and greatly increase the speed of next search.</p>
+<p>It is common that misspelled words share similar prefixes as the correct words, and Trie can be helpful in performing string matching algorithm in this context of spell check.</p>
+<h3 id="suffix-trie">Suffix Trie</h3>
+<p>Normally, suffix trie is also called suffix tree and as the name suggests, it stores the suffixes of a string in ways <a href="#tries">compressed trie</a> store prefixes. The difference between a compressed trie and a suffix trie is that suffix trie uses all suffixes of a single string which is appended with a $ and a trie terminates a bunch of strings with $.</p>
+<p>For instance, given a string &quot;banana&quot; and build a suffix trie for that, first a $ has to be appended to the end of the string, namely &quot;banana$&quot;; then list all its suffixes &quot;banana$&quot;, &quot;anana$&quot;, &quot;nana$&quot;, &quot;ana$&quot;, &quot;na$&quot;, &quot;a$&quot; and &quot;$&quot;; finally, prefix them in a trie structure to obtain the suffix tree:</p>
+<figure style="text-align:center">
+  <img src="../images/suffix.png">
+  <figcaption>Figure 3. Suffix Trie Representation</figcaption>
+</figure>
+
+<ul>
+<li>Applications</li>
+</ul>
+<p>There are many practical uses of Suffix Trees such as Longest Common Substring problem, Genomic projects, etc. It is worth noted Suffix Tree is not practical in single searches since preprocess the given text requires a large amount of time.</p>
+<h2 id="additional-references">Additional References</h2>
+<ol>
+<li><p>What is a rolling hash and when is it useful? <a href="https://www.quora.com/What-is-a-rolling-hash-and-when-is-it-useful" target="_blank">https://www.quora.com/What-is-a-rolling-hash-and-when-is-it-useful</a></p>
+</li>
+<li><p>Suffix Trees, HackerEarth. <a href="https://www.hackerearth.com/practice/data-structures/advanced-data-structures/suffix-trees/tutorial/" target="_blank">https://www.hackerearth.com/practice/data-structures/advanced-data-structures/suffix-trees/tutorial/</a></p>
+</li>
+<li><p>Applications of Suffix Trees <a href="http://www.cs.uku.fi/~kilpelai/BSA05/lectures/slides08.pdf" target="_blank">http://www.cs.uku.fi/~kilpelai/BSA05/lectures/slides08.pdf</a></p>
+</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="hash-table.html" class="navigation navigation-prev " aria-label="Previous page: Hash Table">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../dynamic-programming/overview.html" class="navigation navigation-next " aria-label="Next page: Dynamic Programming">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"String Search","level":"2.7.5","depth":2,"next":{"title":"Dynamic Programming","level":"2.8","depth":1,"path":"dynamic-programming/overview.md","ref":"dynamic-programming/overview.md","articles":[{"title":"Overview","level":"2.8.1","depth":2,"path":"dynamic-programming/overview.md","ref":"dynamic-programming/overview.md","articles":[]}]},"previous":{"title":"Hash Table","level":"2.7.4","depth":2,"path":"searching/hash-table.md","ref":"searching/hash-table.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"searching/string-matching.md","mtime":"2017-10-15T22:05:50.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-31T23:46:50.251Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

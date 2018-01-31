@@ -1,0 +1,893 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Multiplication · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="dnc-strategy.html" />
+    
+    
+    <link rel="prev" href="overview.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Preface
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Outline</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../asymptotic-analysis.html">
+            
+                <a href="../asymptotic-analysis.html">
+            
+                    
+                    Asymptotic-Analysis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    Divide-and-Conquer (DnC)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2.2" data-path="multiplication.html">
+            
+                <a href="multiplication.html">
+            
+                    
+                    Multiplication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="dnc-strategy.html">
+            
+                <a href="dnc-strategy.html">
+            
+                    
+                    DnC Strategy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="master-method.html">
+            
+                <a href="master-method.html">
+            
+                    
+                    Master Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../randomization/overview.html">
+            
+                <a href="../randomization/overview.html">
+            
+                    
+                    Randomization
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../randomization/overview.html">
+            
+                <a href="../randomization/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../randomization/discrete-probability.html">
+            
+                <a href="../randomization/discrete-probability.html">
+            
+                    
+                    Discrete Probability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../randomization/randomized-algorithms.html">
+            
+                <a href="../randomization/randomized-algorithms.html">
+            
+                    
+                    Randomized Algorithms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../sorting/overview.html">
+            
+                <a href="../sorting/overview.html">
+            
+                    
+                    Sorting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../sorting/overview.html">
+            
+                <a href="../sorting/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../sorting/selection-sort.html">
+            
+                <a href="../sorting/selection-sort.html">
+            
+                    
+                    Selection Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../sorting/bubble-sort.html">
+            
+                <a href="../sorting/bubble-sort.html">
+            
+                    
+                    Bubble Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../sorting/insertion-sort.html">
+            
+                <a href="../sorting/insertion-sort.html">
+            
+                    
+                    Insertion Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="../sorting/shell-sort.html">
+            
+                <a href="../sorting/shell-sort.html">
+            
+                    
+                    Shell Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" data-path="../sorting/merge-sort.html">
+            
+                <a href="../sorting/merge-sort.html">
+            
+                    
+                    Merge Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.7" data-path="../sorting/heap-sort.html">
+            
+                <a href="../sorting/heap-sort.html">
+            
+                    
+                    Heap Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.8" data-path="../sorting/quick-sort.html">
+            
+                <a href="../sorting/quick-sort.html">
+            
+                    
+                    Quick Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../graph-algorithms/overview.html">
+            
+                <a href="../graph-algorithms/overview.html">
+            
+                    
+                    Graph Algorithms
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../graph-algorithms/overview.html">
+            
+                <a href="../graph-algorithms/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../graph-algorithms/minimum-spanning-tree.html">
+            
+                <a href="../graph-algorithms/minimum-spanning-tree.html">
+            
+                    
+                    Minimum Spanning Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../graph-algorithms/shortest-path.html">
+            
+                <a href="../graph-algorithms/shortest-path.html">
+            
+                    
+                    Shortest Path
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../tree/overview.html">
+            
+                <a href="../tree/overview.html">
+            
+                    
+                    Tree
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../tree/overview.html">
+            
+                <a href="../tree/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" >
+            
+                <span>
+            
+                    
+                    Balanced Search Tree
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.2.1" data-path="../tree/avl-tree.html">
+            
+                <a href="../tree/avl-tree.html">
+            
+                    
+                    AVL Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.2" data-path="../tree/red-black-tree.html">
+            
+                <a href="../tree/red-black-tree.html">
+            
+                    
+                    Red-Black Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.3" data-path="../tree/b-tree.html">
+            
+                <a href="../tree/b-tree.html">
+            
+                    
+                    B Tree
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../tree/heap.html">
+            
+                <a href="../tree/heap.html">
+            
+                    
+                    Heap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../searching/overview.html">
+            
+                <a href="../searching/overview.html">
+            
+                    
+                    Searching
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../searching/overview.html">
+            
+                <a href="../searching/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../searching/binary-search.html">
+            
+                <a href="../searching/binary-search.html">
+            
+                    
+                    Binary Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../searching/graph-search.html">
+            
+                <a href="../searching/graph-search.html">
+            
+                    
+                    Graph Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../searching/hash-table.html">
+            
+                <a href="../searching/hash-table.html">
+            
+                    
+                    Hash Table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../searching/string-matching.html">
+            
+                <a href="../searching/string-matching.html">
+            
+                    
+                    String Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../dynamic-programming/overview.html">
+            
+                <a href="../dynamic-programming/overview.html">
+            
+                    
+                    Dynamic Programming
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../dynamic-programming/overview.html">
+            
+                <a href="../dynamic-programming/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../greedy-algorithms/overview.html">
+            
+                <a href="../greedy-algorithms/overview.html">
+            
+                    
+                    Greedy Algorithms
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="../greedy-algorithms/overview.html">
+            
+                <a href="../greedy-algorithms/overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Multiplication</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="multiplication">Multiplication</h1>
+<p>This chapter concerns the naive multiplication algorithms and their non-trivial advanced counterparts which all take the form of DnC strategy.</p>
+<hr>
+<h2 id="integer-multiplication">Integer Multiplication</h2>
+<p>Recall from what the teachers taught in grade-school a typical integer multiplication may take a form like below:</p>
+<figure style="text-align: center">
+  <img src="../images/integer-multiply.png">
+  <figcaption>Figure 1. The grade-school integer multiplication algorithm</figcaption>
+</figure>
+
+<p>In this naive algorithm, the total number of operations is 3 (<em>3 operations per row for multiplication and addition</em>)&#xB7; 3 (<em>3 rows in total</em>) = 9. Thus, roughly the running time estimation is &#x441; &#x22C5; n<sup>2</sup>, bounded by &#x39F;(n<sup>2</sup>).</p>
+<p>It is so widely adopted that less attention been paid to a more complex, yet efficient method.</p>
+<h3 id="karatsuba-multiplication"><a href="https://en.wikipedia.org/wiki/Karatsuba_algorithm" target="_blank">Karatsuba Multiplication</a></h3>
+<p>Assuming we are multiplying two n-digit numbers x and y; then dividing each of them:
+x = 10<sup>n/2</sup> &#x22C5; a + b, y = 10<sup>n/2</sup> &#x22C5; c + d</p>
+<p>And multiply them together as:
+x &#x22C5; y =  10<sup>n</sup>ac + 10<sup>n/2</sup>(bc + ad) + bd</p>
+<p>Then, the algorithm in a <a href="overview.html">DnC</a> pattern has complexity: &#x3A4;(n) = 4&#x3A4;(n/2) + &#x39F;(n)</p>
+<p>Applying the math trick discovered by <a href="https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss" target="_blank">Carl Friedrich Gauss</a>, that (bc + ad) = (a + b)(c + d) - ac - bd, the complexity will be reduced to &#x3A4;(n) = 3&#x3A4;(n/2) + &#x39F;(n)</p>
+<h4 id="pseudocode">Pseudocode</h4>
+<pre>
+<code>
+MULTIPLY(x, y)
+  x, y are positive integers
+  output: their product
+
+  n = min(x, y)
+  if n is 1, return xy
+
+  xL, xR = leftmost [n/2], rightmost [n/2] of x
+  yL, yR = leftmost [n/2], rightmost [n/2] of y
+
+  P1 = MULTIPLY(xL, yL)
+  P2 = MULTIPLY(xR, yR)
+  P3 = MULTIPLY(xL + xR, yL + yR)
+
+  return P1 * 10n + (P3 - P1 - P2) * 10n/2 + P2
+</code>
+</pre>
+
+<p><em><strong>Note</strong>: the x and y could be odd or even numbers and produce the correct result by padding bits before recursive calls and dropping bits before combination phase.</em></p>
+<h4 id="algorithm-analysis">Algorithm Analysis</h4>
+<p>Upon analyzing the complexity of both the naive and Karatsuba multiplication, the <a href="master-method.html">Master Method</a> comes into play.</p>
+<p>In naive version of integer multiplication, &#x3A4;(n) = &#x39F;(n<sup>2</sup>); The DnC multiplication without optimization would be &#x3A4;(n) = 4 &#x3A4;(n / 2) + &#x39F;(n) = &#x39F;(n<sup>log<sub>2</sub>4</sup>) = &#x39F;(n<sup>2</sup>);</p>
+<p>Obviously, the DnC multiplication without optimization equates the efficiency of the naive algorithm. After applying <a href="#karatsuba-multiplication">Karatsuba multiplication</a> the overall complexity would be &#x3A4;(n) = 3 &#x3A4;(n / 2) + &#x39F;(n) = &#x39F;(n<sup>log<sub>2</sub>3</sup>) &#x2248; &#x39F;(n<sup>1.59</sup>).</p>
+<p>Hence, the Karatsuba multiplication beats the naive integer multiplication algorithm in their running time efficiency.</p>
+<hr>
+<h2 id="matrix-multiplication">Matrix Multiplication</h2>
+<p>Matrix Multiplication, termed as Matrix dot Product as well, is a form of multiplication involving two matrices &#x3A7; (n &#x2717; n), &#x3A5; (n &#x2717; n)like below:</p>
+<figure style="text-align:center">
+  <img src="../images/matrix_product.png">
+  <figcaption>Figure 2. Matrix Dot Product Mathematical Notation</figcaption>
+</figure>
+
+<p>The preceeding formula indicates a &#x39F;(n<sup>3</sup>) running time given for each entry in the resulting array requires &#x39F;(n) operations and there are &#x39F;(n<sup>2</sup>) in total.</p>
+<h3 id="naive-matrix-split">Naive Matrix Split</h3>
+<p>It is intuitive to devise a <a href="overview.html">DnC</a> pattern like below:</p>
+<figure style="text-align:center">
+  <img src="../images/matrix_divide.png">
+  <figcaption>Figure 3. Matrix Divided into Blocks</figcaption>
+</figure>
+
+<p>The resulting matrix dot product has 8 sub matrix products, 4 more additions and we could formulate a recurrence relation:</p>
+<p>&#x3A4;(n) = 8 &#x3A4;(n / 2) + &#x39F;(n<sup>2</sup>)</p>
+<p>According to <a href="master-method.html">Master Method</a>, the recurrence relation above boils down to: &#x39F;(n<sup>log<sub>2</sub>8</sup>) = &#x39F;(n<sup>3</sup>). Same as it is with the default matrix multiplication method though, there is a way to more efficiently compute the result.</p>
+<h3 id="strassen-matrix-multiplication">Strassen Matrix Multiplication</h3>
+<p>Developed by <a href="https://en.wikipedia.org/wiki/Volker_Strassen" target="_blank">V. Strassen</a>, an intricate matrix decomposition magically reduces the complexity;</p>
+<figure style="text-align:center">
+  <img src="../images/matrix_strassen.png">
+  <figcaption>Figure 4. Strassen Multiplication Matrix Decomposition</figcaption>
+</figure>
+
+<p>where</p>
+<div style="text-align:center">
+  &#x420;<sub>1</sub> = A (F - H), &#x420;<sub>2</sub> = (A + B) H, &#x420;<sub>3</sub> = (C + D) E, &#x420;<sub>4</sub> = D (G - E), &#x420;<sub>5</sub> = (A + D)(E + H), &#x420;<sub>6</sub> = (B - D)(G + H), &#x420;<sub>7</sub> = (A - C)(E + F)
+</div>
+
+<p>Thus, new recurrence relation: &#x3A4;(n) = 7&#x3A4;(n / 2) + &#x39F;(n<sup>2</sup>)</p>
+<p>By the <a href="master-method.html">Master Method</a>, the running time is &#x39F;(n<sup>log<sub>2</sub>7</sup>) &#x2248; &#x39F;(n<sup>2.81</sup>); it beats the <a href="#naive-matrix-split">naive-matrix-split</a> method of <a href="../asymptotic-analysis.html">polynomial time</a> &#x39F;(n<sup>3</sup>).</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="overview.html" class="navigation navigation-prev " aria-label="Previous page: Overview">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="dnc-strategy.html" class="navigation navigation-next " aria-label="Next page: DnC Strategy">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Multiplication","level":"2.2.2","depth":2,"next":{"title":"DnC Strategy","level":"2.2.3","depth":2,"path":"divide-and-conquer/dnc-strategy.md","ref":"divide-and-conquer/dnc-strategy.md","articles":[]},"previous":{"title":"Overview","level":"2.2.1","depth":2,"path":"divide-and-conquer/overview.md","ref":"divide-and-conquer/overview.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"divide-and-conquer/multiplication.md","mtime":"2017-08-06T14:13:06.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-31T23:46:50.251Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
