@@ -14,9 +14,26 @@ It is especially helpful for students, engineers and scientists to organize algo
 
 In order to collaboratively take advantage of this material, usage in the following forms are welcomed:
 
-- Preview the documentation online, see [outlines](SUMMARY.md)
-- Download the [pdf], [epub] or [raw html] versions of the algorithm handbook for self-learning or redistribution under the license constraint.
+- Preview the documentation online, see [outlines](./docs/SUMMARY.md)
+- Access the online version: https://aaronoah.gitbooks.io/algorithm-cracker/content/
 - Clone or Fork this repo to build your own flavor of algorithm handbook or to submit Pull Request.
+
+### Getting Started
+
+Clone the repo:
+```bash
+git clone https://github.com/aaronoah/algorithm-cracker.git
+```
+
+Then, review the book on your browser
+```bash
+npm run serve
+```
+
+Or build the book
+```bash
+npm run build
+```
 
 ## Contributing
 
