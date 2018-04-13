@@ -29,7 +29,7 @@
   "homepage": "https://github.com/aaronoah/algorithm-cracker#readme",
   "devDependencies": {
     "gitbook-cli": "^2.3.2",
-    "jsonlint": "^1.6.2",
-    "markdown-link-check": "^3.1.6"
+    "jsonlint": "^1.6.3",
+    "markdown-link-check": "^3.3.0"
   }
 }
