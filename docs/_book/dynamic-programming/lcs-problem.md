@@ -1,3 +1,0 @@
-# LCS (longest-common-subsequence) problem
-
-[longest-common-subsequence](https://en.wikipedia.org/wiki/Longest_common_subsequence_problem) differs from problem of finding the [longest common substring](https://en.wikipedia.org/wiki/Longest_common_substring_problem); and it has wide applications such as [diff utility](https://en.wikipedia.org/wiki/Diff_utility) and [bioinformatics](https://en.wikipedia.org/wiki/Bioinformatics)

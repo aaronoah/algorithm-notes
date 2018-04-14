@@ -96,4 +96,4 @@ In a possible recursion rule, the solution candidates will go from {Root, A}, {R
 
 ## Additional References
 
-1. Cornell CPSC 490: Bidirectional Search: http://www.cs.cornell.edu/~wdtseng/icpc/notes/bt3.pdf
+1. Wikibooks Bidirectional Search: https://en.wikibooks.org/wiki/Artificial_Intelligence/Search/Heuristic_search/Bidirectional_Search

@@ -1,6 +1,6 @@
 # String Matching
 
-Given a text [string](https://en.wikipedia.org/wiki/String_(computer_science)) _T_ and a pattern _P_ (a substring, a character or a [Regular Expression](https://en.wikipedia.org/wiki/Regular_expression)), which are both in the defined character set &sum;, find some/all occurrences of _P_ within _T_ is termed the task of [string matching](#string-matching).
+Given a text string _T_ and a pattern _P_ (a substring, a character or a [Regular Expression](https://en.wikipedia.org/wiki/Regular_expression)), which are both in the defined character set &sum;, find some/all occurrences of _P_ within _T_ is termed the task of [string matching](#string-matching).
 
 There are multiple string-matching applications in computing such as the popular [_grep_](https://en.wikipedia.org/wiki/Grep) UNIX tool in finding patterns within data sets.
 

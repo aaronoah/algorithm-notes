@@ -68,7 +68,7 @@ LOOKUP costs &Theta;(1 + &alpha;) in [chaining](#chaining) version of [Hash Tabl
 
 Although it is possible for [(separate) chaining](#separate-chaining) method to have number of buckets smaller than the total number of elements to store, [open addressing](#open-addressing) must be kept with enough extra spaces in [hash table][hash-table] buckets (m &ges; n, &alpha; &les; 1).
 
-In other words, all elements are stored in buckets and one entry per bucket. While it is possible for such hash table to fill up the entire buckets, [open addressing](#open-addressing) method saves memory occupation by [pointers](https://en.wikipedia.org/wiki/Pointer_(computer_programming)) to allocate more buckets, drastically minimizing hash collisions and improving searching speed.
+In other words, all elements are stored in buckets and one entry per bucket. While it is possible for such hash table to fill up the entire buckets, [open addressing](#open-addressing) method saves memory occupation by [pointers](https://en.wikipedia.org/wiki/Pointer) to allocate more buckets, drastically minimizing hash collisions and improving searching speed.
 
 In order to INSERT element into the hash table, [open addressing](#open-addressing) requires continuous buckets examinations, which is termed **probe**, until an empty bucket is located;
 
@@ -148,7 +148,15 @@ Generally, this method outperforms the [division method](#division-method). If _
 
 ## Table Doubling
 
-(this section is not yet covered)
+When the number of elements exceeds the number of buckets (assume chaining is not used), the hash table needs to grow its size to not slow down the access speed. Similar as when the number of elements are far less than the number of buckets, the hash table needs to shrink its size to save memory space.
+
+The goal is to make sure &Theta;(n) = m whenever the table shrinks or grows. Then, how fast should it grow and shrink?
+
+Suppose it grows from m to m+1, which means there is rebuild of hash table in every step of insertion, in total: &Theta;(1 + 2 + 3 + ... + n) = &Theta;(n<sup>2</sup>), not good.
+
+What about grow it to its double size? e.g. m to 2m, which means there is only rebuild of hash table in 2<sup>i</sup>th step (i is the number of insertion operation), in total: &Theta;(1 + 2 + 4 + ... + n) = &Theta;(n) (n is a power of 2). There are few inserts cause linear time to rebuild the hash table while the overall average time would be &Theta;(1) (see [amortized analysis](https://stackoverflow.com/questions/11102585/what-is-amortized-analysis-of-algorithms))
+
+For table shrinkage, if applying the similar rule to shrink the table size to its half, there will have problems when the n exceeds m by 1 then delete that new element (first double the table size then resize to original). Therefore, in order to avoid that frequent memory modification pattern, the table will shrink to half its size when n = m / 4
 
 ---
 

@@ -1,6 +1,6 @@
 # Shortest Path
 
-In a [Geo-spatial Network](https://en.wikipedia.org/wiki/Spatial_network) application, it is a common feature to compute shortest paths for various purposes, e.g. planning a route from current location to a destination on the geographic map; scheduling nearest [Uber](https://en.wikipedia.org/wiki/Uber_(company)) cars to users requesting ride service.
+In a [Geo-spatial Network](https://en.wikipedia.org/wiki/Spatial_network) application, it is a common feature to compute shortest paths for various purposes, e.g. planning a route from current location to a destination on the geographic map; scheduling nearest [Uber](https://en.wikipedia.org/wiki/Uber) cars to users requesting ride service.
 
 Specifically, there are two types of tasks to compute shortest paths: [single-source](#single-source) and [multi-source](#multi-source), both of which are computed based on **weighted graph** structures. One of the most important algorithms in the 20th is [Dijkstra's Algorithm](#dijkstras-algorithm).
 
