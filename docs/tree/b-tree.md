@@ -65,4 +65,14 @@ A graphical example with _M_ = 4 (ignoring data items for convenience, in real i
 
 Imagine there are frequent **_query_** requests sent to the database servers or file systems for specific data, some parts of indexes should stay in memory or cache to have better response time. B+ tree is more suitable than B-tree in this scenario.
 
-In a B+ tree, all internal nodes have no data and only keys while leaves maintain all data items instead. In this way, one I/O access of a single _page_ would retrieve a node with more indexes, therefore B+ tree is more disk-friendly (loading nodes into the memory without considering of varying data object sizes).
+In a B+ tree, all internal nodes have no data and only keys and ONLY leaves maintain all data items instead. In this way, one I/O access of a single _page_ would retrieve a node with more indexes, therefore B+ tree is more disk-friendly (loading nodes into the memory without considering of varying data object sizes). Moreover, B+ tree is a threaded tree which means all its leaf nodes are connected and better for range query (e.g. search for a date range within the data)
+
+<figure style="text-align:center">
+  <img src="../images/b+tree.jpg"/>
+  <figcaption>Figure 4. B+ tree illustration</figcaption>
+</figure>
+
+## Additional References
+
+1. MongoDB Indexes use B tree: https://docs.mongodb.com/manual/indexes/#id2
+2. B-Tree vs Hash Table indexing in MySQL: https://stackoverflow.com/questions/7306316/b-tree-vs-hash-table
