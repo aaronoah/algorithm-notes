@@ -37,7 +37,7 @@ npm run build
 
 ## Contributing
 
-Make sure you follow the [contributing guide](../.github/CONTRIBUTING.md) in order to proceed with any forms of contribution.
+Make sure you follow the [contributing guide](.github/CONTRIBUTING.md) in order to proceed with any forms of contribution.
 
 ## License
 
