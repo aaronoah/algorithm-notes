@@ -1,3 +1,6 @@
+
+<a href="https://aaronoah.gitbooks.io/algorithm-cracker/content/"><img src="https://github.com/aaronoah/algorithm-cracker/blob/master/docs/images/logo.gif" height="200" align="right"></a>
+
 # algorithm-cracker
 
 Comprehensive algorithms solution to help engineers prepare their interviews and future study :cookie:
