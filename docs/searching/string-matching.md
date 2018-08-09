@@ -127,4 +127,4 @@ There are many practical uses of Suffix Trees such as Longest Common Substring p
 
 2. Suffix Trees, HackerEarth. https://www.hackerearth.com/practice/data-structures/advanced-data-structures/suffix-trees/tutorial/
 
-3. Applications of Suffix Trees http://www.cs.uku.fi/~kilpelai/BSA05/lectures/slides08.pdf
+3. Applications of Suffix Trees https://web.stanford.edu/~mjkay/Maass.pdf

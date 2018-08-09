@@ -34,6 +34,8 @@
         * [Red-Black Tree](tree/red-black-tree.md)
         * [B Tree](tree/b-tree.md)
     * [Heap](tree/heap.md)
+    * [Disjoint Set](tree/disjoint-set.md)
+    * [Threaded Binary Tree](tree/threaded-binary-tree.md)
 * [Searching][Searching Overview]
     * [Overview][Searching Overview]
     * [Binary Search](searching/binary-search.md)

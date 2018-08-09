@@ -39,3 +39,6 @@ A _**complete k-ary tree**_ is a tree in which all leaves have the same _depth_ 
 * [AVL Tree](avl-tree.md) - a trivial implementation of a balanced binary tree.
 * [Red-Black Tree](red-black-tree.md) - a prevalent balanced binary tree implementation.
 * [Heap](heap.md) - a special tree structure facilitates various applications such as [priority queue](https://en.wikipedia.org/wiki/Priority_queue) and [heap sort](../sorting/heap-sort.md).
+* [B-Tree](b-tree.md) - a disk based tree structure, particularly useful in database design.
+* [Disjoint-Set](disjoint-set.md) - a set operation that finds relevance among data and build up forests for faster manipulations.
+* [Threaded Binary Tree](threaded-binary-tree.md) - a special form of binary tree that connect leaves to parents, useful in designing Morris traversal, which require &Omicron;(1) extra space.
