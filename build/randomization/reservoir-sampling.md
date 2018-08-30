@@ -1,6 +1,6 @@
 # Reservoir Sampling
 
-Labeled as _Algorithm R_ in the description by [Jeffrey Vitter](https://en.wikipedia.org/wiki/Jeffrey_Vitter) in his subject of [Random Sampling with a Reservoir](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.138.784&rep=rep1&type=pdf), reservoir sampling is a common technique in data processing: randomly choose _k_ samples out of a set _S_ with n items wherein the n is either very large or unknown beforehand; all the chosen _k_ items form a "reservoir" in this sense and guarantee to have each of them chosen with equal probability 1/n.
+Labeled as _Algorithm R_ in the description by [Jeffrey Vitter](https://en.wikipedia.org/wiki/Jeffrey_Vitter) in his subject of [Random Sampling with a Reservoir](https://dl.acm.org/citation.cfm?id=3165), reservoir sampling is a common technique in data processing: randomly choose _k_ samples out of a set _S_ with n items wherein the n is either very large or unknown beforehand; all the chosen _k_ items form a "reservoir" in this sense and guarantee to have each of them chosen with equal probability 1/n.
 
 ## Formal Description
 
@@ -31,4 +31,4 @@ After the (i-1)<sup>th</sup> round, let us assume, the probability of a number b
 
 ## Additional References
 
-1. NIST, Reservoir Sampling. https://xlinux.nist.gov/dads/HTML/reservoirSampling.html
+1. Medium, Reservoir Sampling. https://medium.com/100-days-of-algorithms/day-33-reservoir-sampling-252062ce0baa

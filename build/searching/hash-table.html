@@ -427,6 +427,19 @@
             
         </li>
     
+        <li class="chapter " data-level="2.5.4" data-path="../graph-algorithms/topological-sort.html">
+            
+                <a href="../graph-algorithms/topological-sort.html">
+            
+                    
+                    Topological Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -523,6 +536,32 @@
             
                     
                     Heap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="../tree/disjoint-set.html">
+            
+                <a href="../tree/disjoint-set.html">
+            
+                    
+                    Disjoint Set
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="../tree/threaded-binary-tree.html">
+            
+                <a href="../tree/threaded-binary-tree.html">
+            
+                    
+                    Threaded Binary Tree
             
                 </a>
             
@@ -773,7 +812,7 @@
 <p>LOOKUP costs &#x398;(1 + &#x3B1;) in <a href="#chaining">chaining</a> version of <a href="#hash-table">Hash Table</a>. INSERTION operation in this structure takes <a href="../asymptotic-analysis.html">worst-case</a> running time of &#x39F;(1), while the DELETION might takes up to &#x39F;(n) if all entries hashed into one bucket; if using the doubly <a href="https://en.wikipedia.org/wiki/Linked_list" target="_blank">LinkedList</a>, DELETION may speed up.</p>
 <h3 id="open-addressing">Open Addressing</h3>
 <p>Although it is possible for <a href="#separate-chaining">(separate) chaining</a> method to have number of buckets smaller than the total number of elements to store, <a href="#open-addressing">open addressing</a> must be kept with enough extra spaces in <a href="#hash-table">hash table</a> buckets (m &#x2A7E; n, &#x3B1; &#x2A7D; 1).</p>
-<p>In other words, all elements are stored in buckets and one entry per bucket. While it is possible for such hash table to fill up the entire buckets, <a href="#open-addressing">open addressing</a> method saves memory occupation by <a href="https://en.wikipedia.org/wiki/Pointer_(computer_programming" target="_blank">pointers</a>) to allocate more buckets, drastically minimizing hash collisions and improving searching speed.</p>
+<p>In other words, all elements are stored in buckets and one entry per bucket. While it is possible for such hash table to fill up the entire buckets, <a href="#open-addressing">open addressing</a> method saves memory occupation by <a href="https://en.wikipedia.org/wiki/Pointer" target="_blank">pointers</a> to allocate more buckets, drastically minimizing hash collisions and improving searching speed.</p>
 <p>In order to INSERT element into the hash table, <a href="#open-addressing">open addressing</a> requires continuous buckets examinations, which is termed <strong>probe</strong>, until an empty bucket is located;</p>
 <p><em>probe sequence</em>: to make INSERTION operation successful, for each <em>key</em> k, there is a length m <strong>probe sequence</strong>:</p>
 <p>&lt; h(k,0), h(k, 1), ..., h(k, m-1) &gt;</p>
@@ -825,7 +864,11 @@
 <h3 id="universal-hashing">Universal Hashing</h3>
 <p>(this section is not yet covered)</p>
 <h2 id="table-doubling">Table Doubling</h2>
-<p>(this section is not yet covered)</p>
+<p>When the number of elements exceeds the number of buckets (assume chaining is not used), the hash table needs to grow its size to not slow down the access speed. Similar as when the number of elements are far less than the number of buckets, the hash table needs to shrink its size to save memory space.</p>
+<p>The goal is to make sure &#x398;(n) = m whenever the table shrinks or grows. Then, how fast should it grow and shrink?</p>
+<p>Suppose it grows from m to m+1, which means there is rebuild of hash table in every step of insertion, in total: &#x398;(1 + 2 + 3 + ... + n) = &#x398;(n<sup>2</sup>), not good.</p>
+<p>What about grow it to its double size? e.g. m to 2m, which means there is only rebuild of hash table in 2<sup>i</sup>th step (i is the number of insertion operation), in total: &#x398;(1 + 2 + 4 + ... + n) = &#x398;(n) (n is a power of 2). There are few inserts cause linear time to rebuild the hash table while the overall average time would be &#x398;(1) (see <a href="https://stackoverflow.com/questions/11102585/what-is-amortized-analysis-of-algorithms" target="_blank">amortized analysis</a>)</p>
+<p>For table shrinkage, if applying the similar rule to shrink the table size to its half, there will have problems when the n exceeds m by 1 then delete that new element (first double the table size then resize to original). Therefore, in order to avoid that frequent memory modification pattern, the table will shrink to half its size when n = m / 4</p>
 <hr>
 <h2 id="examples">Examples</h2>
 <p>Various programming problems borrow solutions from <a href="#hash-table">Hash Table</a> implementations to increase productivity.</p>
@@ -894,7 +937,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Hash Table","level":"2.7.4","depth":2,"next":{"title":"String Search","level":"2.7.5","depth":2,"path":"searching/string-matching.md","ref":"searching/string-matching.md","articles":[]},"previous":{"title":"Graph Search","level":"2.7.3","depth":2,"path":"searching/graph-search.md","ref":"searching/graph-search.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"searching/hash-table.md","mtime":"2018-01-27T23:36:19.736Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-31T23:48:42.198Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Hash Table","level":"2.7.4","depth":2,"next":{"title":"String Search","level":"2.7.5","depth":2,"path":"searching/string-matching.md","ref":"searching/string-matching.md","articles":[]},"previous":{"title":"Graph Search","level":"2.7.3","depth":2,"path":"searching/graph-search.md","ref":"searching/graph-search.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"searching/hash-table.md","mtime":"2018-08-08T23:16:41.848Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-30T03:11:31.740Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

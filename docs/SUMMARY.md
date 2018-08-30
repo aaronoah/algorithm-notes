@@ -27,6 +27,7 @@
     * [Overview][Graph Algo]
     * [Minimum Spanning Tree](graph-algorithms/minimum-spanning-tree.md)
     * [Shortest Path](graph-algorithms/shortest-path.md)
+    * [Topological Sort](graph-algorithms/topological-sort.md)
 * [Tree][tree]
     * [Overview][tree]
     * Balanced Search Tree

@@ -1,6 +1,6 @@
 # Non-Comparison Sort
 
-It is proved in the section of [sorting overview](overview.md) that comparison-based sorting scheme has the best [worst-case](../asymptotic-analysis.md) time of &Omicron;(n &sdot; log n). However, there are certain conditions where sorting algorithms could be designed to have linear time complexity. They are further discussed here in this module:
+It is proved in the section of [sorting overview](./overview.md) that comparison-based sorting scheme has the best [worst-case](../asymptotic-analysis.md) time of &Omicron;(n &sdot; log n). However, there are certain conditions where sorting algorithms could be designed to have linear time complexity. They are further discussed here in this module:
 
 ## Counting Sort
 

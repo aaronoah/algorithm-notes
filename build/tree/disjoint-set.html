@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>B Tree · GitBook</title>
+        <title>Disjoint Set · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="heap.html" />
+    <link rel="next" href="threaded-binary-tree.html" />
     
     
-    <link rel="prev" href="red-black-tree.html" />
+    <link rel="prev" href="heap.html" />
     
 
     </head>
@@ -512,7 +512,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.6.2.3" data-path="b-tree.html">
+        <li class="chapter " data-level="2.6.2.3" data-path="b-tree.html">
             
                 <a href="b-tree.html">
             
@@ -543,7 +543,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.6.4" data-path="disjoint-set.html">
+        <li class="chapter active" data-level="2.6.4" data-path="disjoint-set.html">
             
                 <a href="disjoint-set.html">
             
@@ -752,7 +752,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >B Tree</a>
+        <a href=".." >Disjoint Set</a>
     </h1>
 </div>
 
@@ -767,69 +767,42 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="b-tree">B-Tree</h1>
-<p>B-tree is a special form of balanced binary search tree (BBST) designed for fast disk access or I/O operations, and it&apos;s well employed in various commercial or open source databases like MySQL, Oracle,  MongoDB etc. Unlike many binary search trees, B-tree has a branching factor spanning from dozens to thousands which means a tree node can have more than two direct descendants. Before diving into the details of B-tree operations, it is important to first understand differences between disk-based data structures and memory-based ones.</p>
-<h2 id="disk-based-data-structures">Disk-based Data Structures</h2>
-<p>In the present, there are two major types of secondary storage: Hard Disk Drive (<a href="https://en.wikipedia.org/wiki/Hard_disk_drive" target="_blank">HDD</a>) and Solid State Drive (<a href="https://en.wikipedia.org/wiki/Solid-state_drive" target="_blank">SSD</a>), both of which have random access speed considerably slower than RAM. (see: <a href="https://superuser.com/questions/1173675/how-much-faster-is-memory-ram-compared-to-ssd-for-random-access/1173713" target="_blank">here</a>). Despite of the fact that SSD is much faster than HDD in terms of access speed, costs of SSD per GB is much more than that of the HDD.</p>
-<p>Then, the computer I/O model can be approximated as the following picture, where the secondary storage access has time is much higher than main memory and CPU:</p>
-<figure style="text-align:center">
-  <img src="../images/b-tree.png">
-  <figcaption>Figure 1. A Simplified Computer I/O Model</figcaption>
-</figure>
-
-<p>And since the majority of data items are not stored in the memory, it is critical to have fewer I/O access to the disk drives to save as much time as possible. The data structures in disk have to be made differently than in the main memory.</p>
-<h3 id="hard-disk-drive">Hard Disk Drive</h3>
-<p>A typical HDD will look like the following picture:</p>
-<figure style="text-align:center">
-  <img src="../images/b-tree-2.jpg">
-  <figcaption>Figure 2. Hard Disk Drive Internal Look</figcaption>
-</figure>
-
-<p>It consists of one or many <strong>platters</strong> which all spin around a common <strong>spindle</strong>. The drive moves a magnetic <strong>arm</strong> to read/write data from the underlying platters using its <strong>head</strong>. When the platters are spinning and the head remains still, the traveling trajectory of the head makes a circle called <strong>track</strong>, which is further divided into multiple <strong>sector</strong>s with equally distributed physical spaces for data read/write.</p>
-<p>Normally, there are three steps to access disk sectors: <strong>seek</strong>, <strong>latency</strong> and <strong>transfer</strong>.</p>
+                                <h1 id="disjoint-set">Disjoint Set</h1>
+<p>There are applications that requires manipulations on elements distributed on disjoint sets, e.g. <a href="../graph-algorithms/minimum-spanning-tree.html">Kruskal&apos;s Algorithm</a> of generating a minimum spanning tree needs to manage disjoint forests during the construction of a tree.</p>
+<h2 id="operations">Operations</h2>
+<p>A disjoint set data structure maintains a group of disjoint sets &#x1D4AE; = {<em>S<sub>1</sub></em>, <em>S<sub>2</sub></em>, ..., <em>S<sub>k</sub></em>}; there is a <strong>leader</strong> element in each of the set to represent the set itself such that if no modifications made to a set between two set queries, the <strong>leader</strong>(s) for set representation remain the same.</p>
+<p>Specifically, three operations are supported in disjoint set data structures:</p>
 <ol>
-<li>seek: the time it takes for the <strong>head</strong> to move to a relevant <strong>track</strong>.</li>
-<li>latency: the round trip time for the <strong>platter</strong>s to spin for a cycle under the same read/write head.</li>
-<li>transfer: read/write operations on disk sectors.</li>
+<li><strong>MAKE-SET(x)</strong>: build a set with an only member x, which can not be contained in other sets.</li>
+<li><strong>UNION(x, y)</strong>: union the set &#x1D4AE;<sub>x</sub> (contains x) with the set &#x1D4AE;<sub>y</sub> (contains y) to form a new set; Since all the sets should be disjoint between any two of them, building a new set means eliminating the original sets &#x1D4AE;<sub>x</sub> and &#x1D4AE;<sub>y</sub>; Accordingly, the operation of <strong>DELETE-FROM-SET(x)</strong> is replaced by union an element of the original set with the new set.</li>
+<li><strong>FIND-SET(x)</strong>: return a pointer to a <strong>leader</strong> of a specific set.</li>
 </ol>
-<p>The time costs ranking from high to low: <strong>seek</strong> &gt; <strong>latency</strong> &gt; <strong>transfer</strong>. And every I/O access requires physical address lookup on the disk and triggers operations of <strong>seek</strong> while platters are spinning and so forth. Therefore, it is essential to reduce the total number of times the disk I/O access is triggered, especially <strong>seek</strong> operations in between.</p>
-<h3 id="locality-of-reference-and-pre-read">Locality of Reference and pre-read</h3>
-<p>In addition to above, modern computers always pre-read data in advance rather than read by need. Even though sometimes we only read 1 byte, the system still retrieve some length of data into the memory. (see <a href="https://en.wikipedia.org/wiki/Locality_of_reference" target="_blank">locality of reference</a>) The pre-read data item normally spans as a multiple of <em>page</em> size (4k in many operating systems, as data exchange unit between disk and memory) along a relevant <strong>sector</strong> (which does not involve <strong>seek</strong>)</p>
-<p>For a B-tree data structure, each node possesses a space of a multiple of <em>page</em> size (computers allocate _page_s side by side physically) to have a one time I/O guarantee with maximal data needed. Since the B-tree has a very large branching factor, it has far smaller height than normal BBSTs such as <a href="red-black-tree.html">red-black tree</a>, which means a key search in B-tree would require traversing far fewer nodes. As a indexing data structure in disk, B-tree is highly efficient than normal BBSTs.</p>
-<h2 id="definition-of-b-tree">Definition of B-tree</h2>
-<p>A B-tree T with branching factor <em>M</em> is a <strong>rooted tree</strong> that has the following properties:</p>
-<ol>
-<li><p>Each node <em>x</em> has (up to) <em>M</em> - 1 keys and stored in non-descendent order that <em>x</em>.key<sub>1</sub> &#x2A7D; <em>x</em>.key<sub>2</sub> &#x2A7D; ... &#x2A7D; <em>x</em>.key<sub>m-1</sub>.</p>
-</li>
-<li><p>In each node, there are <em>M</em> number of pointers to their children in between wherein each key will have a left pointer and a right pointer.</p>
-</li>
-<li><p>Keys in a node split the ranges of their children&apos;s keys: e.g. there is a pointer between two adjacent keys 3 and 7, then the child node will have keys ranging from 3 to 7 exclusively.</p>
-</li>
-<li><p>Each <em>leaf</em> node has the same depth, which is the height of the tree.</p>
-</li>
-<li><p>Define a constant minimum degree <strong><em>d</em></strong> (as the order of B-tree) to represent the minimum number of keys in a non-leaf node. (B-tree typically has <strong><em>d</em></strong> at least <em>M/2</em>)</p>
-</li>
-</ol>
-<p>A graphical example with <em>M</em> = 4 (ignoring data items for convenience, in real implementations there are items associated with keys):</p>
+<h2 id="dynamic-connectivity">Dynamic Connectivity</h2>
+<p>In a <a href="../graph-algorithms/overview.html">graph</a> structure with myriad connected information in consistent alterations, computing the connectivity among the vertices play an important role in relevant studies. Such term provides a basis for the <a href="#union-find">union-find</a> algorithm, which is a widely practical algorithm in set related problems.</p>
+<h3 id="union-find">Union-Find</h3>
+<p>In the context of union-find operation, frequently there are <strong>UNION</strong> and <strong>FIND-SET</strong> involved. Algorithms described below provide conceptual solutions in different approaches, in which the last one is the most superior design.</p>
+<h4 id="quick-find">Quick Find</h4>
+<p>Use a static array to map the elements occurrence: <em>index</em> as the key of an element and <em>value</em> as the set number such element belongs to. Then, if two elements are in the same set, they will share the same <em>value</em> and easy to find their equality in a array structure.</p>
+<p>For instance, given an array [0, 1, 2, 3, 4, 5], if apply UNION(3, 4), which means connect element 3 to the set element 4 belongs to, which is 4; similarly, if UNION operation cause all of elements in one set have to change corresponding set number to another, it is a huge cost. To improve upon that, <a href="#quick-union">quick union</a> is introduced.</p>
+<h4 id="quick-union">Quick Union</h4>
+<p>Instead of making elements in the same sets have the same set number, this approach uses <a href="overview.html">rooted tree</a> (with root as the set <strong>leader</strong>) to connect all such elements. For instance, when applying UNION(3, 4) after element 4 is connected to element 9, a slight modification to make the element 3 the leaf of element 4 by changing the index number would suffice.</p>
 <figure style="text-align:center">
-  <img src="../images/b-tree-2.png">
-  <figcaption>Figure 3. A B-tree Example</figcaption>
+  <img src="../images/quick-union.png">
+  <figcaption>Figure 1. Quick Union Example</figcaption>
 </figure>
 
-<h2 id="b-tree">B+ Tree</h2>
-<p>Imagine there are frequent <strong><em>query</em></strong> requests sent to the database servers or file systems for specific data, some parts of indexes should stay in memory or cache to have better response time. B+ tree is more suitable than B-tree in this scenario.</p>
-<p>In a B+ tree, all internal nodes have no data and only keys and ONLY leaves maintain all data items instead. In this way, one I/O access of a single <em>page</em> would retrieve a node with more indexes, therefore B+ tree is more disk-friendly (loading nodes into the memory without considering of varying data object sizes). Moreover, B+ tree is a threaded tree which means all its leaf nodes are connected and better for range query (e.g. search for a date range within the data)</p>
+<p>In this way, the cost of <strong>UNION</strong> operation drastically decreases to &#x39F;(1) while slightly increasing the <strong>FIND-SET(i)</strong> operation (array[array[array[...array[i]...]]]). However, the maximum <em>height</em> of such forest structure might be intimidating when there are numerous objects in a set, then an <a href="#quick-union-improvement">improvement mechanism</a> is needed to balance the forest.</p>
+<h4 id="quick-union-improvement">Quick Union Improvement</h4>
+<ul>
+<li><p>Union By Rank</p>
+</li>
+<li><p>Path Compression</p>
+</li>
+</ul>
 <figure style="text-align:center">
-  <img src="../images/b+tree.jpg">
-  <figcaption>Figure 4. B+ tree illustration</figcaption>
+  <img src="../images/weighted-quick-union.png">
+  <figcaption>Figure 2. Weighted Quick Union</figcaption>
 </figure>
-
-<h2 id="additional-references">Additional References</h2>
-<ol>
-<li>MongoDB Indexes use B tree: <a href="https://docs.mongodb.com/manual/indexes/#id2" target="_blank">https://docs.mongodb.com/manual/indexes/#id2</a></li>
-<li>B-Tree vs Hash Table indexing in MySQL: <a href="https://stackoverflow.com/questions/7306316/b-tree-vs-hash-table" target="_blank">https://stackoverflow.com/questions/7306316/b-tree-vs-hash-table</a></li>
-</ol>
-
                                 
                                 </section>
                             
@@ -856,12 +829,12 @@
 
             
                 
-                <a href="red-black-tree.html" class="navigation navigation-prev " aria-label="Previous page: Red-Black Tree">
+                <a href="heap.html" class="navigation navigation-prev " aria-label="Previous page: Heap">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="heap.html" class="navigation navigation-next " aria-label="Next page: Heap">
+                <a href="threaded-binary-tree.html" class="navigation navigation-next " aria-label="Next page: Threaded Binary Tree">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -872,7 +845,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"B Tree","level":"2.6.2.3","depth":3,"next":{"title":"Heap","level":"2.6.3","depth":2,"path":"tree/heap.md","ref":"tree/heap.md","articles":[]},"previous":{"title":"Red-Black Tree","level":"2.6.2.2","depth":3,"path":"tree/red-black-tree.md","ref":"tree/red-black-tree.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tree/b-tree.md","mtime":"2018-08-08T23:16:41.853Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-30T03:11:31.740Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Disjoint Set","level":"2.6.4","depth":2,"next":{"title":"Threaded Binary Tree","level":"2.6.5","depth":2,"path":"tree/threaded-binary-tree.md","ref":"tree/threaded-binary-tree.md","articles":[]},"previous":{"title":"Heap","level":"2.6.3","depth":2,"path":"tree/heap.md","ref":"tree/heap.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tree/disjoint-set.md","mtime":"2018-08-08T23:16:41.853Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-30T03:11:31.740Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

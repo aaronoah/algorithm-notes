@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>B Tree · GitBook</title>
+        <title>Threaded Binary Tree · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="heap.html" />
+    <link rel="next" href="../searching/overview.html" />
     
     
-    <link rel="prev" href="red-black-tree.html" />
+    <link rel="prev" href="disjoint-set.html" />
     
 
     </head>
@@ -512,7 +512,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.6.2.3" data-path="b-tree.html">
+        <li class="chapter " data-level="2.6.2.3" data-path="b-tree.html">
             
                 <a href="b-tree.html">
             
@@ -556,7 +556,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.6.5" data-path="threaded-binary-tree.html">
+        <li class="chapter active" data-level="2.6.5" data-path="threaded-binary-tree.html">
             
                 <a href="threaded-binary-tree.html">
             
@@ -752,7 +752,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >B Tree</a>
+        <a href=".." >Threaded Binary Tree</a>
     </h1>
 </div>
 
@@ -767,68 +767,37 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="b-tree">B-Tree</h1>
-<p>B-tree is a special form of balanced binary search tree (BBST) designed for fast disk access or I/O operations, and it&apos;s well employed in various commercial or open source databases like MySQL, Oracle,  MongoDB etc. Unlike many binary search trees, B-tree has a branching factor spanning from dozens to thousands which means a tree node can have more than two direct descendants. Before diving into the details of B-tree operations, it is important to first understand differences between disk-based data structures and memory-based ones.</p>
-<h2 id="disk-based-data-structures">Disk-based Data Structures</h2>
-<p>In the present, there are two major types of secondary storage: Hard Disk Drive (<a href="https://en.wikipedia.org/wiki/Hard_disk_drive" target="_blank">HDD</a>) and Solid State Drive (<a href="https://en.wikipedia.org/wiki/Solid-state_drive" target="_blank">SSD</a>), both of which have random access speed considerably slower than RAM. (see: <a href="https://superuser.com/questions/1173675/how-much-faster-is-memory-ram-compared-to-ssd-for-random-access/1173713" target="_blank">here</a>). Despite of the fact that SSD is much faster than HDD in terms of access speed, costs of SSD per GB is much more than that of the HDD.</p>
-<p>Then, the computer I/O model can be approximated as the following picture, where the secondary storage access has time is much higher than main memory and CPU:</p>
-<figure style="text-align:center">
-  <img src="../images/b-tree.png">
-  <figcaption>Figure 1. A Simplified Computer I/O Model</figcaption>
-</figure>
-
-<p>And since the majority of data items are not stored in the memory, it is critical to have fewer I/O access to the disk drives to save as much time as possible. The data structures in disk have to be made differently than in the main memory.</p>
-<h3 id="hard-disk-drive">Hard Disk Drive</h3>
-<p>A typical HDD will look like the following picture:</p>
-<figure style="text-align:center">
-  <img src="../images/b-tree-2.jpg">
-  <figcaption>Figure 2. Hard Disk Drive Internal Look</figcaption>
-</figure>
-
-<p>It consists of one or many <strong>platters</strong> which all spin around a common <strong>spindle</strong>. The drive moves a magnetic <strong>arm</strong> to read/write data from the underlying platters using its <strong>head</strong>. When the platters are spinning and the head remains still, the traveling trajectory of the head makes a circle called <strong>track</strong>, which is further divided into multiple <strong>sector</strong>s with equally distributed physical spaces for data read/write.</p>
-<p>Normally, there are three steps to access disk sectors: <strong>seek</strong>, <strong>latency</strong> and <strong>transfer</strong>.</p>
+                                <h1 id="threaded-binary-tree">Threaded Binary Tree</h1>
+<p>Unlike <a href="https://en.wikipedia.org/wiki/Depth-first_search" target="_blank">DFS</a> which adopts recursive algorithms to traverse a tree before backtracking (the stack space of recursive calls would be &#x39F;(n)) and unlike <a href="https://en.wikipedia.org/wiki/Breadth-first_search" target="_blank">BFS</a> which needs a queue to help traverse the tree level by level, <a href="https://en.wikipedia.org/wiki/Threaded_binary_tree" target="_blank">Threaded Binary Tree</a> can achieve traversing a binary tree with only &#x39F;(1) extra space allowed. The traverse method adopting Threaded Binary Tree is also called Morris Traversal.</p>
+<p>That said, we do not need to allocate additional memory for each node in the tree. Only using the left and right <em>null</em> pointers of leaves to point to <em>some</em> predecessors or successors would be necessary, which also maintains the original tree structure intact. In a standard Morris traversal algorithm, there is only an <em>in-order</em> version and this chapter only introduces that version. Further modifications could be explored by the users.</p>
+<h2 id="in-order-morris-traversal">In-order Morris Traversal</h2>
+<h3 id="basic-ideas">Basic Ideas</h3>
+<p>Given a binary tree and its root node, the steps of the traversal algorithm includes:</p>
 <ol>
-<li>seek: the time it takes for the <strong>head</strong> to move to a relevant <strong>track</strong>.</li>
-<li>latency: the round trip time for the <strong>platter</strong>s to spin for a cycle under the same read/write head.</li>
-<li>transfer: read/write operations on disk sectors.</li>
-</ol>
-<p>The time costs ranking from high to low: <strong>seek</strong> &gt; <strong>latency</strong> &gt; <strong>transfer</strong>. And every I/O access requires physical address lookup on the disk and triggers operations of <strong>seek</strong> while platters are spinning and so forth. Therefore, it is essential to reduce the total number of times the disk I/O access is triggered, especially <strong>seek</strong> operations in between.</p>
-<h3 id="locality-of-reference-and-pre-read">Locality of Reference and pre-read</h3>
-<p>In addition to above, modern computers always pre-read data in advance rather than read by need. Even though sometimes we only read 1 byte, the system still retrieve some length of data into the memory. (see <a href="https://en.wikipedia.org/wiki/Locality_of_reference" target="_blank">locality of reference</a>) The pre-read data item normally spans as a multiple of <em>page</em> size (4k in many operating systems, as data exchange unit between disk and memory) along a relevant <strong>sector</strong> (which does not involve <strong>seek</strong>)</p>
-<p>For a B-tree data structure, each node possesses a space of a multiple of <em>page</em> size (computers allocate _page_s side by side physically) to have a one time I/O guarantee with maximal data needed. Since the B-tree has a very large branching factor, it has far smaller height than normal BBSTs such as <a href="red-black-tree.html">red-black tree</a>, which means a key search in B-tree would require traversing far fewer nodes. As a indexing data structure in disk, B-tree is highly efficient than normal BBSTs.</p>
-<h2 id="definition-of-b-tree">Definition of B-tree</h2>
-<p>A B-tree T with branching factor <em>M</em> is a <strong>rooted tree</strong> that has the following properties:</p>
-<ol>
-<li><p>Each node <em>x</em> has (up to) <em>M</em> - 1 keys and stored in non-descendent order that <em>x</em>.key<sub>1</sub> &#x2A7D; <em>x</em>.key<sub>2</sub> &#x2A7D; ... &#x2A7D; <em>x</em>.key<sub>m-1</sub>.</p>
+<li><p>If <em>current</em> node&apos;s left child is null, output the <em>current</em> node&apos;s value and set its right child as the new <em>current</em> node.</p>
 </li>
-<li><p>In each node, there are <em>M</em> number of pointers to their children in between wherein each key will have a left pointer and a right pointer.</p>
+<li><p>Else if <em>current</em> node&apos;s left child is not null, then try to find the <em>predecessor</em> for <em>current</em> node&apos;s left subtree in the <em>in-order</em> traversal.</p>
+<ul>
+<li><p>2-1 If the right child of this <em>predecessor</em> is null, set it to <em>current</em> node and update new <em>current</em> node to be the left child of <em>current</em> node.</p>
 </li>
-<li><p>Keys in a node split the ranges of their children&apos;s keys: e.g. there is a pointer between two adjacent keys 3 and 7, then the child node will have keys ranging from 3 to 7 exclusively.</p>
+<li><p>2-2 Else if the right child of this <em>predecessor</em> is the <em>current</em> node, reset the right child to null (same as recover the original tree structure) and output the <em>current</em> node.</p>
 </li>
-<li><p>Each <em>leaf</em> node has the same depth, which is the height of the tree.</p>
-</li>
-<li><p>Define a constant minimum degree <strong><em>d</em></strong> (as the order of B-tree) to represent the minimum number of keys in a non-leaf node. (B-tree typically has <strong><em>d</em></strong> at least <em>M/2</em>)</p>
+</ul>
 </li>
 </ol>
-<p>A graphical example with <em>M</em> = 4 (ignoring data items for convenience, in real implementations there are items associated with keys):</p>
+<p>repeat step 1 and 2 until <em>current</em> node is null.</p>
 <figure style="text-align:center">
-  <img src="../images/b-tree-2.png">
-  <figcaption>Figure 3. A B-tree Example</figcaption>
+  <img src="../images/threaded-bt.jpg">
+  <figcaption>Figure 1. In-order Morris Traversal Demonstration</figcaption>
 </figure>
 
-<h2 id="b-tree">B+ Tree</h2>
-<p>Imagine there are frequent <strong><em>query</em></strong> requests sent to the database servers or file systems for specific data, some parts of indexes should stay in memory or cache to have better response time. B+ tree is more suitable than B-tree in this scenario.</p>
-<p>In a B+ tree, all internal nodes have no data and only keys and ONLY leaves maintain all data items instead. In this way, one I/O access of a single <em>page</em> would retrieve a node with more indexes, therefore B+ tree is more disk-friendly (loading nodes into the memory without considering of varying data object sizes). Moreover, B+ tree is a threaded tree which means all its leaf nodes are connected and better for range query (e.g. search for a date range within the data)</p>
+<h3 id="complexity">Complexity</h3>
+<p>There are only two additional pointers used, thus requires only &#x39F;(1) for space. Time complexity is &#x39F;(n) since the number of searches for all <em>predecessors</em> of all nodes is bounded by c &#xD7; n (a binary tree with n nodes has no more then n - 1 nodes, every edge is traversed at most twice).</p>
+<p>In the following figure where red dotted lines denote the process of finding such nodes while black dotted lines denote the process of finding predecessors.</p>
 <figure style="text-align:center">
-  <img src="../images/b+tree.jpg">
-  <figcaption>Figure 4. B+ tree illustration</figcaption>
+  <img src="../images/threaded-bt-2.jpg">
+  <figcaption>Figure 2. Total number of searches</figcaption>
 </figure>
-
-<h2 id="additional-references">Additional References</h2>
-<ol>
-<li>MongoDB Indexes use B tree: <a href="https://docs.mongodb.com/manual/indexes/#id2" target="_blank">https://docs.mongodb.com/manual/indexes/#id2</a></li>
-<li>B-Tree vs Hash Table indexing in MySQL: <a href="https://stackoverflow.com/questions/7306316/b-tree-vs-hash-table" target="_blank">https://stackoverflow.com/questions/7306316/b-tree-vs-hash-table</a></li>
-</ol>
 
                                 
                                 </section>
@@ -856,12 +825,12 @@
 
             
                 
-                <a href="red-black-tree.html" class="navigation navigation-prev " aria-label="Previous page: Red-Black Tree">
+                <a href="disjoint-set.html" class="navigation navigation-prev " aria-label="Previous page: Disjoint Set">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="heap.html" class="navigation navigation-next " aria-label="Next page: Heap">
+                <a href="../searching/overview.html" class="navigation navigation-next " aria-label="Next page: Searching">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -872,7 +841,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"B Tree","level":"2.6.2.3","depth":3,"next":{"title":"Heap","level":"2.6.3","depth":2,"path":"tree/heap.md","ref":"tree/heap.md","articles":[]},"previous":{"title":"Red-Black Tree","level":"2.6.2.2","depth":3,"path":"tree/red-black-tree.md","ref":"tree/red-black-tree.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tree/b-tree.md","mtime":"2018-08-08T23:16:41.853Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-30T03:11:31.740Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Threaded Binary Tree","level":"2.6.5","depth":2,"next":{"title":"Searching","level":"2.7","depth":1,"path":"searching/overview.md","ref":"searching/overview.md","articles":[{"title":"Overview","level":"2.7.1","depth":2,"path":"searching/overview.md","ref":"searching/overview.md","articles":[]},{"title":"Binary Search","level":"2.7.2","depth":2,"path":"searching/binary-search.md","ref":"searching/binary-search.md","articles":[]},{"title":"Graph Search","level":"2.7.3","depth":2,"path":"searching/graph-search.md","ref":"searching/graph-search.md","articles":[]},{"title":"Hash Table","level":"2.7.4","depth":2,"path":"searching/hash-table.md","ref":"searching/hash-table.md","articles":[]},{"title":"String Search","level":"2.7.5","depth":2,"path":"searching/string-matching.md","ref":"searching/string-matching.md","articles":[]}]},"previous":{"title":"Disjoint Set","level":"2.6.4","depth":2,"path":"tree/disjoint-set.md","ref":"tree/disjoint-set.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tree/threaded-binary-tree.md","mtime":"2018-08-09T13:00:59.487Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-30T03:11:31.740Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
