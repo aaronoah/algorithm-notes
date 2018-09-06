@@ -1,4 +1,4 @@
-# algorithm-cracker
+# algorithm-notes
 
 Comprehensive algorithms solution to help engineers prepare their interviews and future study :cookie:
 
