@@ -1,7 +1,7 @@
 
-<a href="https://aaronoah.gitbooks.io/algorithm-cracker/content/"><img src="https://github.com/aaronoah/algorithm-cracker/blob/master/docs/images/logo.gif" height="200" align="right"></a>
+<a href="https://aaronoah.gitbooks.io/algorithm-notes/content/"><img src="https://github.com/aaronoah/algorithm-notes/blob/master/docs/images/logo.gif" height="200" align="right"></a>
 
-# algorithm-cracker
+# algorithm-notes
 
 Comprehensive algorithms solution to help engineers prepare their interviews and future study :cookie:
 
@@ -18,14 +18,14 @@ It is especially helpful for students, engineers and scientists to organize algo
 In order to collaboratively take advantage of this material, usage in the following forms are welcomed:
 
 - Preview the documentation online, see [outlines](./docs/SUMMARY.md)
-- Access the online version: https://aaronoah.gitbooks.io/algorithm-cracker/content/
+- Access the online version: https://aaronoah.gitbooks.io/algorithm-notes/content/
 - Clone or Fork this repo to build your own flavor of algorithm handbook or to submit Pull Request.
 
 ### Getting Started
 
 Clone the repo:
 ```bash
-git clone https://github.com/aaronoah/algorithm-cracker.git
+git clone https://github.com/aaronoah/algorithm-notes.git
 ```
 
 Then, review the book on your browser
