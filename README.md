@@ -1,5 +1,5 @@
 
-<a href="https://aaronoah.gitbooks.io/algorithm-notes/content/"><img src="https://github.com/aaronoah/algorithm-notes/blob/master/docs/images/logo.gif" height="200" align="right"></a>
+<a href="https://cs-notes.gitbook.io/algorithm-notes/"><img src="https://github.com/aaronoah/algorithm-notes/blob/master/docs/images/logo.gif" height="200" align="right"></a>
 
 # algorithm-notes
 
@@ -18,7 +18,7 @@ It is especially helpful for students, engineers and scientists to organize algo
 In order to collaboratively take advantage of this material, usage in the following forms are welcomed:
 
 - Preview the documentation online, see [outlines](./docs/SUMMARY.md)
-- Access the online version: https://aaronoah.gitbooks.io/algorithm-notes/content/
+- Access the online version: https://cs-notes.gitbook.io/algorithm-notes/
 - Clone or Fork this repo to build your own flavor of algorithm handbook or to submit Pull Request.
 
 ### Getting Started
