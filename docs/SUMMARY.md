@@ -14,6 +14,7 @@
     * [Overview][Randomization Overview]
     * [Discrete Probability](randomization/discrete-probability.md)
     * [Randomized Algorithms](randomization/randomized-algorithms.md)
+    * [Reservoir Sampling](randomization/reservoir-sampling.md)
 * [Sorting][Sorting Overview]
     * [Overview][Sorting Overview]
     * [Selection Sort](sorting/selection-sort.md)
@@ -23,6 +24,7 @@
     * [Merge Sort](sorting/merge-sort.md)
     * [Heap Sort](sorting/heap-sort.md)
     * [Quick Sort](sorting/quick-sort.md)
+    * [Non-Comparison Sort](sorting/non-comparison-sort.md)
 * [Graph Algorithms][Graph Algo]
     * [Overview][Graph Algo]
     * [Minimum Spanning Tree](graph-algorithms/minimum-spanning-tree.md)
@@ -37,6 +39,7 @@
     * [Heap](tree/heap.md)
     * [Disjoint Set](tree/disjoint-set.md)
     * [Threaded Binary Tree](tree/threaded-binary-tree.md)
+    * [Segment Tree](tree/segment-tree.md)
 * [Searching][Searching Overview]
     * [Overview][Searching Overview]
     * [Binary Search](searching/binary-search.md)

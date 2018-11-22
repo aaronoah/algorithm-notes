@@ -12,5 +12,6 @@ In the algorithm design, [randomization](#randomization) plays a pivot role in p
 
 * [Discrete Probability](discrete-probability.md) - probability analysis, indicator random variable and several statistics definitions covered.
 * [Randomized Algorithms][randomized] - median-finding problem, i<sup>th</sup> order statistic finding problem are analyzed and solved randomly and deterministic.
+* [Reservoir Sampling](reservoir-sampling.md) - an introduction to a common technique in data processing.
 
 [randomized]: randomized-algorithms.md

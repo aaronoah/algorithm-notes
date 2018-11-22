@@ -42,3 +42,4 @@ A _**complete k-ary tree**_ is a tree in which all leaves have the same _depth_ 
 * [B-Tree](b-tree.md) - a disk based tree structure, particularly useful in database design.
 * [Disjoint-Set](disjoint-set.md) - a set operation that finds relevance among data and build up forests for faster manipulations.
 * [Threaded Binary Tree](threaded-binary-tree.md) - a special form of binary tree that connect leaves to parents, useful in designing Morris traversal, which require &Omicron;(1) extra space.
+* [Segment Tree](segment-tree.md) - a binary tree used for storing intervals or segments within a data array to speed up queries such as [Range Minimum Query](segment-tree.md).
