@@ -56,8 +56,6 @@ In 1986, [Prof. Robert Sedgewick](https://en.wikipedia.org/wiki/Robert_Sedgewick
 
 ## Additional Resources
 
-1. Computer Algorithms: Shell Sort, http://www.stoimen.com/blog/2012/02/27/computer-algorithms-shell-sort/
+1. Fastest gap sequence for shell sort? https://stackoverflow.com/questions/2539545/fastest-gap-sequence-for-shell-sort
 
-2. Fastest gap sequence for shell sort? https://stackoverflow.com/questions/2539545/fastest-gap-sequence-for-shell-sort
-
-3. Analysis of Shell Sort and Related Algorithms, R. Sedgewick, Princeton U. http://www.cs.princeton.edu/~rs/shell/paperF.pdf
+2. Analysis of Shell Sort and Related Algorithms, R. Sedgewick, Princeton U. http://www.cs.princeton.edu/~rs/shell/paperF.pdf

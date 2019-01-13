@@ -46,4 +46,20 @@ FIBONACCI(n)
 </code>
 </pre>
 
-Therefore, FIBONACCI(k) only takes **one** recursion, &forall; k &isin; n; and all memoized calls use &Theta;(1) time
+Therefore, FIBONACCI(k) only takes **one** recursion, &forall; k &isin; n; and all memoized calls use &Theta;(1) time. Thus, the time complexity is &Omicron;(n), space complexity is &Omicron;(1)
+
+What about we don't want to have recursions? Then, we can use an extra linear space to store the FIB(n - 1) and FIB(n - 2) when computing FIB(n), which is to use _iteration_ in replacement of _recursion_ and having the same time complexity but avoid the use of recursion, which is also called **bottom-up DP**.
+
+<pre>
+<code>
+FIBONACCI(n)
+  fib := {}
+  for k in 1...n
+    if k &les; 2
+      f = 1
+    else
+      f = fib[n - 1] + fib[n - 2]
+    fib[k] = f
+  return fib[n]
+</code>
+</pre>

@@ -186,9 +186,6 @@ Overall, a killer solution is by using the concept of [Hash Table][hash-table]. 
 
 ### Java 8 HashMap
 
-> _reference_:
-> http://www.nagarro.com/de/perspectives/post/24/performance-improvement-for-hashmap-in-java-8
-
 Hash collisions in hash table data structures have significant impact on performance of LOOKUP operation as to increase the [worst-case](../asymptotic-analysis.md) running time from &Omicron;(1) to &Omicron;(n).
 
 To improve upon that, Java8 spec of HashMap implementations requires the buckets containing colliding keys should store entries in a balanced tree instead of linked list. Hence, the searching operation takes no more than &Omicron;(log(n)) in general.

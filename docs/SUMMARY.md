@@ -48,6 +48,8 @@
     * [String Search](searching/string-matching.md)
 * [Dynamic Programming][dynamic]
     * [Overview][dynamic]
+    * [Fibonacci Numbers](dynamic-programming/fibonacci-numbers.md)
+    * [LCS problem](dynamic-programming/lcs-problem.md)
 * [Greedy Algorithms][greedy]
     * [Overview][greedy]
 

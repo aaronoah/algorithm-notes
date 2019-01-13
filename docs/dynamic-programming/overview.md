@@ -8,18 +8,12 @@ In contrast to the paradigm of [DnC][DnC] that sub-problems are independent, dyn
 
 The typical [dynamic programming][dynamic] algorithm is developed in steps follow:
 
-1. Characterize the _optimal_ sub-structures along with possible moves.
+1. Characterize the _optimal_ sub-structures along with possible moves. (think of it as finding a DAG for a solution path)
 2. Define the recurrence relations of sub-problems.
 3. Compute recursively or iteratively in a _bottom-up_ fashion or _top-down_ with [_memoization_](https://en.wikipedia.org/wiki/Memoization) fashion.
 4. Construct an overall _optimal_ solution or combining solutions of sub-problems.
 
 _Noted that the word **programming** does not stand for **computer programming** but a tabulation method that was invented by [R. Bellman](https://en.wikipedia.org/wiki/Richard_E._Bellman)_.
-
-## Principles of Dynamic Programming
-
-
-
-## Classic Knapsack Problem
 
 ## Comparing with [Greedy Algorithms][greedy]
 
